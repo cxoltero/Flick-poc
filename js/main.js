@@ -16,6 +16,36 @@
 
 
 
+
+
+    function loadPics() {
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //make an empty array
+                var arr = [];
+                var myResp = JSON.parse(xmlhttp.response);
+
+                for(var i=0; i<myResp.photos.photo.length; i++){
+                    console.log(myResp.photos.photo[i].id);
+                }
+
+                document.getElementById("demo").innerHTML = myResp.photos.page;
+            }
+        };
+
+        xmlhttp.open("Get", url, true);
+        xmlhttp.send();
+
+    }
+    loadPics();
+
+
+
+
+
+
     function makeNonce()
     {
         var text = "";
@@ -26,25 +56,4 @@
 
         return text;
     }
-
-    function loadPics() {
-        var xmlhttp = new XMLHttpRequest();
-
-        xmlhttp.onreadystatechange = function () {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                //make an empty array
-                var arr = [];
-
-                console.log(xmlhttp.response)
-                document.getElementById("demo").innerHTML = xmlhttp.responseText;
-            }
-        };
-
-        xmlhttp.open("Get", url, true);
-        xmlhttp.send();
-
-
-    }
-    loadPics();
-
 })();
