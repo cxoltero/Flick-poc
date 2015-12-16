@@ -26,21 +26,23 @@
 
                 //parse request to json
                 var myResp = JSON.parse(xmlhttp.response);
-
-                console.log(myResp);
+                //console.log(myResp);
 
                 for(var i=0; i< myResp.photos.photo.length; i++){
                     var farm = myResp.photos.photo[i].farm;
                     var server = myResp.photos.photo[i].server;
                     var id = myResp.photos.photo[i].id;
+                    var title = myResp.photos.photo[i].title;
                     var secret = myResp.photos.photo[i].secret;
-                    var picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_o.jpg";
+                    var picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
 
+                    //add each picture url to the pics array
                     pics.push(picUrl);
+                    document.getElementById('demo').innerHTML = "<img src="+picUrl+" alt="+title+"/>";
                 }
-                console.log(pics);
             }
-            return pics;
+            //return pics;
+            //document.getElementById('demo').innerHTML = pics[0];
         };
 
         xmlhttp.open("Get", url, true);
@@ -48,7 +50,6 @@
 
     }
     loadPics();
-
     //function to create an oauth_nounce
     //function makeNonce()
     //{
