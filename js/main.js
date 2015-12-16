@@ -38,11 +38,16 @@
 
                     //add each picture url to the pics array
                     pics.push(picUrl);
-                    document.getElementById('demo').innerHTML = "<img src="+picUrl+" alt="+title+"/>";
+
+                }
+                for(var i=0; i<pics.length; i++){
+                    var list = document.getElementById('list');
+                    var img = '';
+                    for(var i = 0; i<pics.length; i++){
+                        list.innerHTML = list.innerHTML + '<li><img src=' + pics[i] + ' /></li>';
+                    }
                 }
             }
-            //return pics;
-            //document.getElementById('demo').innerHTML = pics[0];
         };
 
         xmlhttp.open("Get", url, true);
