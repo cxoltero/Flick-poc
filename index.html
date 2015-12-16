@@ -8,12 +8,24 @@
 </head>
 <body>
 <div class="container">
+
     <h1>Flickr-Puf</h1>
 
     <h6>Gallery</h6>
-    <ul id="list">
+    <div class="button">
+        <button id="prev">
+            < <span class="offscreen">Previous</span>
+        </button>
+        <button id="next">
+            <span class="offscreen">Next</span> >
+        </button>
+    </div>
+    <div class="image-slider-wrapper">
 
-    </ul>
+        <ul id="list">
+        <!--Injecting li images from javascript-->
+        </ul>
+    </div>
 </div>
 <script src="js/main.js"></script>
 </body>

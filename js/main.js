@@ -1,22 +1,14 @@
 (function() {
-    //supplied values from flickr
-    var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
-    var secret = 'c73c5dcbac8e4a96';
-    var method = "flickr.photos.search";
-    var user_id = "138698049@N03";
-    var format = '&format=json';
-    var url = "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
-
-    //required values for oauth
-    //var oauth_nonce = makeNonce();
-    //var oauth_timestamp = Math.round((new Date()).getTime() / 1000);
-    //var oauth_consumer_key = api_key;
-    //var oauth_signature_method= "HMAC-SHA1";
-    //var oauth_signature = '';
-
-
 
     function loadPics() {
+        //supplied values from flickr
+        var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
+        var secret = 'c73c5dcbac8e4a96';
+        var method = "flickr.photos.search";
+        var user_id = "138698049@N03";
+        var format = '&format=json';
+        var url = "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
+
         var xmlhttp = new XMLHttpRequest();
 
         xmlhttp.onreadystatechange = function () {
@@ -44,32 +36,60 @@
                     var list = document.getElementById('list');
                     var img = '';
                     for(var i = 0; i<pics.length; i++){
-                        list.innerHTML = list.innerHTML + '<li><img src=' + pics[i] + ' /></li>';
+                        list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[i]+'><img src=' + pics[i] + ' /></li>';
                     }
                 }
+                var items = document.getElementById('img0');
+                items.classList.remove('active');
+                items.classList.add('current');
+
+                getCarousel();
             }
         };
 
         xmlhttp.open("Get", url, true);
         xmlhttp.send();
 
+
+
     }
-    loadPics();
-    //function to create an oauth_nounce
-    //function makeNonce()
-    //{
-    //    var text = "";
-    //    var possible = "0123456789";
-    //
-    //    for( var i=0; i < 8; i++ )
-    //        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    //
-    //    return text;
-    //}
 
 
+    function getCarousel(){
+        var box = document.getElementsByClassName('image-slider-wrapper');
+        var next = document.getElementById('next');
+        var counter = 0;
+        var prev = document.getElementById('prev');
+        var items = document.getElementsByTagName('img');
+        var amount = items.length;
+        var current = document.getElementsByClassName('current');
 
-    //var picUrl = " https://farm"+myResp.photos.photo[i].farm+".staticflickr.com/"+myResp.photos.photo[i].server="/"+myResp.photos.photo[i].id+"_"+myResp.photos.photo[i].secret="_o.(jpg | gif | png)"
+        function navigate(direction){
+            alert(direction);
+            //counter = counter + counter;
+            //console.log(direction);
+            //if(direction === -1 && counter < 0) {
+            //    counter = amount -1;
+            //}
+            //else if(direction === 1 && !items[counter]){
+            //    counter = 0;
+            //    console.log(counter);
+            //}
+            //current = items[counter];
+            //current.classList.add('current');
+        }
+        next.addEventListener("click", function(event){
+            navigate(1);
+        });
+        prev.addEventListener("click", function(event){
+            navigate(0);
+        });
+        navigate(0);
+    };
 
-    //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
+    function execute(){
+        loadPics();
+    }
+    execute();
+
 })();
