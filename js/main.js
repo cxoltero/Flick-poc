@@ -27,10 +27,16 @@
                 //parse request to json
                 var myResp = JSON.parse(xmlhttp.response);
 
-                //console.log(myResp);
+                console.log(myResp);
 
                 for(var i=0; i< myResp.photos.photo.length; i++){
-                    pics.push(myResp.photos.photo[i]);
+                    var farm = myResp.photos.photo[i].farm;
+                    var server = myResp.photos.photo[i].server;
+                    var id = myResp.photos.photo[i].id;
+                    var secret = myResp.photos.photo[i].secret;
+                    var picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_o.jpg";
+
+                    pics.push(picUrl);
                 }
                 console.log(pics);
             }
@@ -54,4 +60,10 @@
     //
     //    return text;
     //}
+
+
+
+    //var picUrl = " https://farm"+myResp.photos.photo[i].farm+".staticflickr.com/"+myResp.photos.photo[i].server="/"+myResp.photos.photo[i].id+"_"+myResp.photos.photo[i].secret="_o.(jpg | gif | png)"
+
+    //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{o-secret}_o.(jpg|gif|png)
 })();
