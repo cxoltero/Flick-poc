@@ -20,7 +20,7 @@ body{
     border: 1px solid #ccc;
     box-shadow: 2px 2px 10px #ccc;
     overflow: hidden;
-    /*background-color: black;*/
+    background-color: black;
 }
 #list{
      margin: 0;
@@ -47,7 +47,7 @@ body{
 .active img{
     display: none;
 }
-.active .buttons{
+.active .button{
     padding: 5px 0;
     background: #eee;
     text-align: center;
@@ -56,18 +56,18 @@ body{
 }
 .image-slider-wrapper button{
     border: none;
-    display: none;
+    /*display: none;*/
 }
 .active button{
-    /*diaplay: block;*/
+    diaplay: block;
 }
 .offscreen{
     /*position: absolute;*/
     /*left: -2000px;*/
 }
-.prev{
-    /*float: left;*/
+#prev{
+    float: left;
 }
-.next{
-    /*float: right;*/
+#next{
+    float: right;
 }

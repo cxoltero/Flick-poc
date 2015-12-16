@@ -32,8 +32,8 @@
 
                     //add each picture url to the pics array
                     pics.push(picUrl);
-
                 }
+
                 for(var i=0; i<pics.length; i++){
                     list = document.getElementById('list');
                     img = '';
@@ -48,14 +48,9 @@
                 getCarousel();
             }
         };
-
         xmlhttp.open("Get", url, true);
         xmlhttp.send();
-
-
-
     }
-
 
     function getCarousel(){
         var box = document.getElementsByClassName('image-slider-wrapper');
@@ -78,7 +73,6 @@
         next.addEventListener("click", function(event){
             items = document.getElementById('img'+counter);
             counter = counter+1;
-            console.log(counter);
 
             if(counter <= amount-1){
                 items.classList.remove('current');
