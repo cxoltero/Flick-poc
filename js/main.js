@@ -12,6 +12,8 @@
         var xmlhttp = new XMLHttpRequest();
 
         xmlhttp.onreadystatechange = function () {
+            var farm, server, id, title, secret, picUrl, list, img, items;
+
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 //make an empty array
                 var pics = [];
@@ -21,25 +23,25 @@
                 //console.log(myResp);
 
                 for(var i=0; i< myResp.photos.photo.length; i++){
-                    var farm = myResp.photos.photo[i].farm;
-                    var server = myResp.photos.photo[i].server;
-                    var id = myResp.photos.photo[i].id;
-                    var title = myResp.photos.photo[i].title;
-                    var secret = myResp.photos.photo[i].secret;
-                    var picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
+                    farm = myResp.photos.photo[i].farm;
+                    server = myResp.photos.photo[i].server;
+                    id = myResp.photos.photo[i].id;
+                    title = myResp.photos.photo[i].title;
+                    secret = myResp.photos.photo[i].secret;
+                    picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
 
                     //add each picture url to the pics array
                     pics.push(picUrl);
 
                 }
                 for(var i=0; i<pics.length; i++){
-                    var list = document.getElementById('list');
-                    var img = '';
+                    list = document.getElementById('list');
+                    img = '';
                     for(var i = 0; i<pics.length; i++){
                         list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[i]+'><img src=' + pics[i] + ' /></li>';
                     }
                 }
-                var items = document.getElementById('img0');
+                items = document.getElementById('img0');
                 items.classList.remove('active');
                 items.classList.add('current');
 
@@ -65,26 +67,58 @@
         var current = document.getElementsByClassName('current');
 
         function navigate(direction){
-            alert(direction);
-            //counter = counter + counter;
-            //console.log(direction);
-            //if(direction === -1 && counter < 0) {
-            //    counter = amount -1;
-            //}
-            //else if(direction === 1 && !items[counter]){
-            //    counter = 0;
-            //    console.log(counter);
-            //}
-            //current = items[counter];
-            //current.classList.add('current');
+            if(direction === 1){
+                items = document.getElementById('img'+counter);
+                current = document.getElementsByClassName('current');
+                items.classList.remove('current');
+                items.classList.add('active');
+            }
+
         }
         next.addEventListener("click", function(event){
-            navigate(1);
-        });
-        prev.addEventListener("click", function(event){
+            items = document.getElementById('img'+counter);
+            counter = counter+1;
+            console.log(counter);
+
+            if(counter <= amount-1){
+                items.classList.remove('current');
+                items.classList.add('active');
+                items.nextSibling.classList.remove('active');
+                items.nextSibling.classList.add('current');
+            }else if(counter === amount){
+                items.classList.remove('current');
+                items.classList.add('active');
+                items = document.getElementById('img0');
+                items.classList.remove('active');
+                items.classList.add('current');
+                counter=0;
+            }
             navigate(0);
         });
-        navigate(0);
+        prev.addEventListener("click", function(event){
+            items = document.getElementById('img'+counter);
+
+            if(counter > 0){
+                counter = counter-1;
+                console.log(counter);
+                items.classList.remove('current');
+                items.classList.add('active');
+                items.previousSibling.classList.remove('active');
+                items.previousSibling.classList.add('current');
+            }else{
+                console.l
+                items = document.getElementById('img'+items.length);
+                //counter= items.length;
+                console.log(items);
+                //items.classList.remove('current');
+                //items.classList.add('active');
+                //items = document.getElementById('img'+items.length);
+                //items.classList.remove('active');
+                //items.classList.add('current');
+                //counter= items.lenght;
+            }
+            navigate(0);
+        });
     };
 
     function execute(){
