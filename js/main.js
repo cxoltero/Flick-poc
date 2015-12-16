@@ -100,22 +100,18 @@
 
             if(counter > 0){
                 counter = counter-1;
-                console.log(counter);
                 items.classList.remove('current');
                 items.classList.add('active');
                 items.previousSibling.classList.remove('active');
                 items.previousSibling.classList.add('current');
-            }else{
-                console.l
-                items = document.getElementById('img'+items.length);
-                //counter= items.length;
-                console.log(items);
-                //items.classList.remove('current');
-                //items.classList.add('active');
-                //items = document.getElementById('img'+items.length);
-                //items.classList.remove('active');
-                //items.classList.add('current');
-                //counter= items.lenght;
+            }else if(counter === 0){
+                items = document.getElementById('img'+counter);
+                items.classList.remove('current');
+                items.classList.add('active');
+                counter = amount-1;
+                items = document.getElementById('img'+counter);
+                items.classList.remove('active');
+                items.classList.add('current');
             }
             navigate(0);
         });
