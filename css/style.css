@@ -6,10 +6,11 @@ body, html{
     width: 80%;
     margin-left: 10%;
 }
+#list li{
+    list-style: none;
+}
+
 #list img{
     width: 100px;
-    /*display: inline-block;*/
-}
-#list li{
-    /*display: inline-block;*/
+    position: relative;
 }
