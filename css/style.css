@@ -1,7 +1,12 @@
 body, html{
+<<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
     margin: 0;
     padding: 0;
 }
+=======
+    margin : 0;
+    padding : 0;
+>>>>>>> fixing conflics
 .container{
     width: 80%;
     margin-left: 10%;
@@ -17,6 +22,7 @@ body, html{
 #list img{
     width: 100px;
     position: relative;
+<<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
 <<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
 }
 .imgArray{
@@ -24,3 +30,6 @@ body, html{
 =======
 >>>>>>> cleaned code, just need to figure out how to style original pictures
 }
+=======
+}
+>>>>>>> fixing conflics

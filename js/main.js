@@ -1,7 +1,6 @@
 (function(){
-    "use strict";
 
-    (function loadPics(){
+    function loadPics(){
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
         var method = "flickr.photos.search";
         var user_id = "138698049@N03";
@@ -11,6 +10,56 @@
         $.getJSON(url, function(data){
             if (data) {
                 createDomElm(data);
+            }
+        }
+        xmlhttp.open("Get", url, true);
+        xmlhttp.send();
+    }
+    function getCarousel(){
+        var next, counter, prev, items, amount, current;
+
+        next = document.getElementById('next');
+        counter = 0;
+        prev = document.getElementById('prev');
+        items = document.getElementsByTagName('img');
+        amount = items.length;
+        current = document.getElementsByClassName('current');
+
+        function navigate(direction){
+            if(direction === 1){
+                items = document.getElementById('img'+counter);
+                current = document.getElementsByClassName('current');
+                removeCurrentAddActive(items);
+            }
+        }
+        next.addEventListener("click", function(){
+            items = document.getElementById('img'+counter);
+            counter = counter+1;
+
+            if(counter <= amount-1){
+                removeCurrentAddActive(items);
+                removeActiveAddCurrent(items.nextSibling);
+            }else if(counter === amount){
+                removeCurrentAddActive(items);
+                items = document.getElementById('img0');
+                removeActiveAddCurrent(items);
+                counter=0;
+            }
+            navigate(0);
+        });
+        prev.addEventListener("click", function(){
+            items = document.getElementById('img'+counter);
+
+            if(counter > 0){
+                counter = counter-1;
+                removeCurrentAddActive(items);
+                removeActiveAddCurrent(items.previousSibling);
+            }else if(counter === 0){
+                items = document.getElementById('img'+counter);
+                removeCurrentAddActive(items);
+                counter = amount-1;
+                items = document.getElementById('img'+counter);
+                removeActiveAddCurrent(items);
             }
         });
         function createDomElm(data){
