@@ -30,8 +30,13 @@ $(document).ready(function(){
     })();
     function createDomElm(data){
 
+<<<<<<< 51ca6d0d321965aec314458100bfc3367fad0800
         var farm, server, id, title, secret, picUrl, img;
          for(var i=0; i< data.photos.photo.length; i++){
+=======
+
+            for(var i=0; i< data.photos.photo.length; i++){
+>>>>>>> fixed image positioning, and refactor json request
                 farm = data.photos.photo[i].farm;
                 server = data.photos.photo[i].server;
                 id = data.photos.photo[i].id;
