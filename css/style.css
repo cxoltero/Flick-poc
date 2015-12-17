@@ -8,13 +8,19 @@ body, html{
 }
 #list li{
     list-style: none;
+<<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
     margin: 0 auto;
+=======
+>>>>>>> cleaned code, just need to figure out how to style original pictures
 }
 
 #list img{
     width: 100px;
     position: relative;
+<<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
 }
 .imgArray{
     display: inline-block;
+=======
+>>>>>>> cleaned code, just need to figure out how to style original pictures
 }
