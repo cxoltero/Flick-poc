@@ -1,12 +1,6 @@
-<<<<<<< 1eb0a634554666fcdf9acd117a555df9ca24d3bb
-body, html {
-    margin: 0;
-    padding: 0;
-=======
 body, html{
     margin : 0;
     padding : 0;
->>>>>>> fixed image positioning, and refactor json request
 }
 .container{
     width: 80%;
@@ -14,17 +8,9 @@ body, html{
 }
 #list li{
     list-style: none;
-    margin: 0 auto;
 }
 
 #list img {
     width: 100px;
     position: relative;
-<<<<<<< 1eb0a634554666fcdf9acd117a555df9ca24d3bb
-=======
-    display: inline-block;
-}
-.imgArray{
-    display: inline-block;
->>>>>>> fixed image positioning, and refactor json request
 }
