@@ -22,6 +22,7 @@
         function createDomElm(data){
             var farm, server, id, title, secret, picUrl, img;
 
+
             for(var i=0; i< data.photos.photo.length; i++){
                 farm = data.photos.photo[i].farm;
                 server = data.photos.photo[i].server;
