@@ -12,6 +12,8 @@
         $.getJSON(url, function(data){
             if (data) {
                 createDomElm(data);
+            }else{
+                return
             }
         }
         xmlhttp.open("Get", url, true);
