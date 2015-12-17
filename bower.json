@@ -4,7 +4,11 @@
   "authors": [
     "Roberto C. Hernandez <carlosh95@gmail.com>"
   ],
+<<<<<<< 65788a940f251428f7ca55a83e31f511d208ac89
   "description": "This application is intended to be a slideshow to pull images from Flickr and display them as a slideshow to the user.",
+=======
+  "description": "",
+>>>>>>> bower.json added
   "main": "",
   "moduleType": [],
   "license": "MIT",
@@ -17,8 +21,14 @@
     "tests"
   ],
   "dependencies": {
+<<<<<<< 65788a940f251428f7ca55a83e31f511d208ac89
     "bootstrap": "3.3.6",
     "jquery": "2.1.4",
     "lightbox2": "2.8.2"
+=======
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "lightbox2": "~2.8.2"
+>>>>>>> bower.json added
   }
 }
