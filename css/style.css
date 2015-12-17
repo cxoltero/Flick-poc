@@ -23,7 +23,7 @@ body, html{
 
 /* Wrapper for page content to push down footer */
 #wrap {
-    height: 85vh;
+    min-height: 85vh;
 }
 
 /* Set the fixed height of the footer here */

@@ -8,9 +8,6 @@
         var format = '&format=json';
         var url = "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
 
-
-
-
         $.getJSON(url, function(data){
             var items = [];
             var farm, server, id, title, secret, picUrl, list, img, items;
@@ -29,7 +26,7 @@
                 }
             }
         });
-        (function getImages(){
+        (function addActiveclass(){
             $('.carousel').carousel({
                 interval:3000
             });
