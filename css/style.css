@@ -1,6 +1,13 @@
+<<<<<<< c11110fbe7dcb96f26f31c140b76e3fa37abe2dd
 body, html{
     margin : 0;
     padding : 0;
+=======
+
+body, html{
+    margin: 0;
+    padding: 0;
+>>>>>>> fixing conflics
 }
 .container{
     width: 80%;
@@ -13,4 +20,8 @@ body, html{
 #list img{
     width: 100px;
     position: relative;
+<<<<<<< c11110fbe7dcb96f26f31c140b76e3fa37abe2dd
 }
+=======
+}
+>>>>>>> fixing conflics
