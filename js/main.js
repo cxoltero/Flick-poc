@@ -30,7 +30,6 @@
             }
         });
         (function getImages(){
-
             $('.carousel').carousel({
                 interval:3000
             });
