@@ -15,17 +15,7 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var pics = [];
                 var myResp = JSON.parse(xmlhttp.response);
-
-                for(var i=0; i< myResp.photos.photo.length; i++){
-                    farm = myResp.photos.photo[i].farm;
-                    server = myResp.photos.photo[i].server;
-                    id = myResp.photos.photo[i].id;
-                    title = myResp.photos.photo[i].title;
-                    secret = myResp.photos.photo[i].secret;
-                    picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-                    pics.push(picUrl);
-                };
-
+                photoData(pics, myResp);
                 pupulate(pics);
                 items = document.getElementById('img0');
                 removeActiveAddCurrent(items);
@@ -84,6 +74,17 @@
             navigate(-1);
         });
     };
+    function photoData(pics, myResp){
+        for(var i=0; i< myResp.photos.photo.length; i++){
+            farm = myResp.photos.photo[i].farm;
+            server = myResp.photos.photo[i].server;
+            id = myResp.photos.photo[i].id;
+            title = myResp.photos.photo[i].title;
+            secret = myResp.photos.photo[i].secret;
+            picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
+            pics.push(picUrl);
+        };
+    }
     function pupulate(pics){
         for(var i=0; i<pics.length; i++){
             list = document.getElementById('list');
