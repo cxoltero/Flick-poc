@@ -1,5 +1,11 @@
+<<<<<<< 91be62623f0cc3695ee87964be1fa4fe7b60df0e
 (function(){
     function loadPics(){
+=======
+
+(function(){
+    (function loadPics(){
+>>>>>>> fixing conflics
         //supplied values from flickr
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
         var secret = 'c73c5dcbac8e4a96';
@@ -10,6 +16,10 @@
 
 
 
+<<<<<<< 91be62623f0cc3695ee87964be1fa4fe7b60df0e
+=======
+
+>>>>>>> fixing conflics
         $.getJSON(url, function(data){
             var items = [];
             var farm, server, id, title, secret, picUrl, list, img, items;
@@ -24,6 +34,7 @@
                     picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
                     $('.image-slider-wrapper ul').append("<li class='active' ><a class='lightbox' data-lightbox=image-set"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
                 }
+<<<<<<< 91be62623f0cc3695ee87964be1fa4fe7b60df0e
             }
         }
         xmlhttp.open("Get", url, true);
@@ -103,6 +114,8 @@
             var list = document.getElementById('list');
             for(j = 0; j<pics.length; j++){
                 list.innerHTML = list.innerHTML + "<li class= 'active' id='img"+[j]+"'><img src='" + pics[j] + "' /></li>";
+=======
+>>>>>>> fixing conflics
             }
         }
     }
