@@ -23,17 +23,10 @@
                     title = myResp.photos.photo[i].title;
                     secret = myResp.photos.photo[i].secret;
                     picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-
                     pics.push(picUrl);
                 }
+                populate(pics);
 
-                for(var i=0; i<pics.length; i++){
-                    list = document.getElementById('list');
-                    img = '';
-                    for(var i = 0; i<pics.length; i++){
-                        list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[i]+'><img src=' + pics[i] + ' /></li>';
-                    }
-                }
                 items = document.getElementById('img0');
                 items.classList.remove('active');
                 items.classList.add('current');
@@ -43,6 +36,17 @@
         };
         xmlhttp.open("Get", url, true);
         xmlhttp.send();
+    }
+
+
+    function populate(pics){
+        for(var i=0; i<pics.length; i++){
+            list = document.getElementById('list');
+            img = '';
+            for(var i = 0; i<pics.length; i++){
+                list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[i]+'><img src=' + pics[i] + ' /></li>';
+            }
+        }
     }
 
     function getCarousel(){
@@ -85,7 +89,7 @@
         prev.addEventListener("click", function(event){
             items = document.getElementById('img'+counter);
 
-            if(counter > 0){
+            if(counter < 0){
                 counter = counter-1;
                 items.classList.remove('current');
                 items.classList.add('active');
@@ -104,9 +108,7 @@
         });
     };
 
-    function execute(){
+    window.onload = function execute(){
         loadPics();
-    }
-    execute();
-
+    };
 })();
