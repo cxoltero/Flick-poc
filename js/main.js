@@ -24,14 +24,15 @@
                     //$('.image-slider-wrapper ul').append("<li class='active' ><a class='lightbox' data-lightbox=image-set"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
                     $('.carousel-inner').append("<div class='item' ><img src='" +picUrl+"'/></div>");
                 }
+                addActiveclass();
             }
         });
-        (function addActiveclass(){
+        function addActiveclass(){
             $('.carousel').carousel({
                 interval:3000
             });
             $(".item:first-child").addClass('active');
-        })();
+        };
 
     })();
 
