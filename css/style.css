@@ -1,11 +1,19 @@
+<<<<<<< e1babdeee873c2eab5f5cee189f0b53f5ed71fa3
 body, html{
     margin : 0;
     padding : 0;
+=======
+
+body, html{
+    margin: 0;
+    padding: 0;
+>>>>>>> fixing conflics
 }
 .container{
     width: 80%;
     margin-left: 10%;
 }
+<<<<<<< e1babdeee873c2eab5f5cee189f0b53f5ed71fa3
 <<<<<<< dd73628a007312a83b8393d8123dd4bdf701911f
 
 .image-slider-wrapper{
@@ -61,6 +69,8 @@ body, html{
     float: right;
 }
 =======
+=======
+>>>>>>> fixing conflics
 #list li{
     list-style: none;
 }
@@ -69,4 +79,7 @@ body, html{
     width: 100px;
     position: relative;
 }
+<<<<<<< e1babdeee873c2eab5f5cee189f0b53f5ed71fa3
 >>>>>>> cleaned code, just need to figure out how to style original pictures
+=======
+>>>>>>> fixing conflics
