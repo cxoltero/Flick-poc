@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="820e2369-5b8b-487e-ab70-3f8ffc409623" name="Default" comment="">
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 <<<<<<< b7d0cca0255d1fc0ce5b4a19cf9400905cd86fd2
 <<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
 <<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
@@ -22,6 +23,11 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
 >>>>>>> added bower components to gitignore
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+>>>>>>> removed bower_components and .idea file
     </list>
     <ignored path="Flickr-Poc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,15 +59,19 @@
     <leaf>
 =======
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 <<<<<<< b7d0cca0255d1fc0ce5b4a19cf9400905cd86fd2
 >>>>>>> fixing conflics
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
 =======
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
 >>>>>>> added bower components to gitignore
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+>>>>>>> removed bower_components and .idea file
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14166667">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
 >>>>>>> cleaned code, just need to figure out how to style original pictures
               <folding />
@@ -69,6 +79,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 <<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
 <<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
@@ -90,6 +101,13 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
 >>>>>>> fixing conflics
+=======
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.39791667">
+              <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+>>>>>>> removed bower_components and .idea file
               <folding />
             </state>
           </provider>
@@ -133,6 +151,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 <<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
 <<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
         <option value="$PROJECT_DIR$/js/main1.js" />
@@ -146,12 +165,18 @@
 >>>>>>> cleaned code, just need to figure out how to style original pictures
 =======
         <option value="$PROJECT_DIR$/js/main.js" />
+=======
+>>>>>>> removed bower_components and .idea file
         <option value="$PROJECT_DIR$/css/style.css" />
 <<<<<<< b7d0cca0255d1fc0ce5b4a19cf9400905cd86fd2
 >>>>>>> fixing conflics
 =======
         <option value="$PROJECT_DIR$/.gitignore" />
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 >>>>>>> added bower components to gitignore
+=======
+        <option value="$PROJECT_DIR$/js/main.js" />
+>>>>>>> removed bower_components and .idea file
       </list>
     </option>
   </component>
@@ -793,14 +818,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< d81151f79bc3453c5daa60a4bb5e61d7ec2be4e1
         <state vertical-scroll-proportion="0.035416666">
           <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
 =======
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -813,8 +846,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< 7bba27d9deadc4e3dc5daef73dba36156518766b
 <<<<<<< b7d0cca0255d1fc0ce5b4a19cf9400905cd86fd2
 <<<<<<< 51ddfee7f16576c3cf666d62fc9f74b543887975
         <state vertical-scroll-proportion="-0.6848341">
@@ -828,6 +862,10 @@
         <state vertical-scroll-proportion="0.14166667">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
 >>>>>>> added bower components to gitignore
+=======
+        <state vertical-scroll-proportion="0.39791667">
+          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+>>>>>>> removed bower_components and .idea file
           <folding />
         </state>
       </provider>
