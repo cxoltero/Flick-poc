@@ -25,7 +25,7 @@
                     $('.image-slider-wrapper ul').append("<li class='active' ><a class='lightbox' data-lightbox=image-set"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
                 }
             }
-        };
+        }
         xmlhttp.open("Get", url, true);
         xmlhttp.send();
     }
