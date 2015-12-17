@@ -15,7 +15,6 @@
             var farm, server, id, title, secret, picUrl, list, img, items;
 
             if (data) {
-
                 for(var i=0; i< data.photos.photo.length; i++){
                     farm = data.photos.photo[i].farm;
                     server = data.photos.photo[i].server;
@@ -23,34 +22,9 @@
                     title = data.photos.photo[i].title;
                     secret = data.photos.photo[i].secret;
                     picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-                    $('.image-slider-wrapper ul').append("<li class='active'><img src= "+picUrl+" /></li>");
+                    $('.image-slider-wrapper ul').append("<li class='active' ><a class='lightbox' data-lightbox=image-set"+" href='" + picUrl + "'><img "+ " src='" +picUrl+"'/></a></li>");
                 }
-
-                //getCarousel();
             }
         });
-
-        $("ul#list").children().addClass('active');
     })();
-
 })();
-
-
-
-
-
-
-
-
-$( ".myh1" ).html('<bold>Header</bold>');
-
-
-
-
-
-
-
-
-$('.button').on('click', function(){
-    alert("you have clicked");
-})
