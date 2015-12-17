@@ -6,6 +6,7 @@ body, html{
     width: 80%;
     margin-left: 10%;
 }
+<<<<<<< dd73628a007312a83b8393d8123dd4bdf701911f
 
 .image-slider-wrapper{
     width: 100%;
@@ -59,3 +60,13 @@ body, html{
 #next{
     float: right;
 }
+=======
+#list li{
+    list-style: none;
+}
+
+#list img{
+    width: 100px;
+    position: relative;
+}
+>>>>>>> cleaned code, just need to figure out how to style original pictures
