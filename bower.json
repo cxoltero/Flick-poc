@@ -4,7 +4,7 @@
   "authors": [
     "Roberto C. Hernandez <carlosh95@gmail.com>"
   ],
-  "description": "",
+  "description": "This application is intended to be a slideshow to pull images from Flickr and display them as a slideshow to the user.",
   "main": "",
   "moduleType": [],
   "license": "MIT",
