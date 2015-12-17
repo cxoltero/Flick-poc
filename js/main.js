@@ -12,6 +12,7 @@
             var items = [];
             var farm, server, id, title, secret, picUrl, list, img, items;
 
+            console.log(data.photos.photo.length);
             if (data) {
                 for(var i=0; i< data.photos.photo.length; i++){
                     farm = data.photos.photo[i].farm;
@@ -22,7 +23,6 @@
                     picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
                     //$('.image-slider-wrapper ul').append("<li class='active' ><a class='lightbox' data-lightbox=image-set"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
                     $('.carousel-inner').append("<div class='item' ><img src='" +picUrl+"'/></div>");
-
                 }
             }
         });
