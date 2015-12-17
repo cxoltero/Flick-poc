@@ -11,7 +11,6 @@ $(document).ready(function(){
         $.getJSON(url, function(data){
             if (data) {
                 createDomElm(data);
-            }
         });
         function createDomElm(data){
             var farm, server, id, title, secret, picUrl, img;
