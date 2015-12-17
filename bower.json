@@ -1,0 +1,23 @@
+{
+  "name": "Flick-Poc",
+  "homepage": "https://github.com/cxoltero/Flick-poc",
+  "authors": [
+    "Roberto C. Hernandez <carlosh95@gmail.com>"
+  ],
+  "description": "This application is intended to be a slideshow to pull images from Flickr and display them as a slideshow to the use",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "lightbox2": "~2.8.2"
+  }
+}
