@@ -1,7 +1,5 @@
 (function() {
-
     function loadPics() {
-        //supplied values from flickr
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
         var secret = 'c73c5dcbac8e4a96';
         var method = "flickr.photos.search";
@@ -15,12 +13,8 @@
             var farm, server, id, title, secret, picUrl, list, img, items;
 
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                //make an empty array
                 var pics = [];
-
-                //parse request to json
                 var myResp = JSON.parse(xmlhttp.response);
-                //console.log(myResp);
 
                 for(var i=0; i< myResp.photos.photo.length; i++){
                     farm = myResp.photos.photo[i].farm;
@@ -30,7 +24,6 @@
                     secret = myResp.photos.photo[i].secret;
                     picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
 
-                    //add each picture url to the pics array
                     pics.push(picUrl);
                 }
 
