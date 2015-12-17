@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Main Paige CSS*/
 body, html{
     margin : 0;
@@ -5,11 +6,17 @@ body, html{
 }
 body{
     /*background-color: aquamarine;*/
+=======
+body, html{
+    margin: 0;
+    padding: 0;
+>>>>>>> 7984670978a1f355a66a184512325909fe46c53a
 }
 .container{
     width: 80%;
     margin-left: 10%;
 }
+<<<<<<< HEAD
 
 /*################  Carousel    #######################*/
 
@@ -71,3 +78,13 @@ body{
 #next{
     float: right;
 }
+=======
+#list li{
+    list-style: none;
+}
+
+#list img{
+    width: 100px;
+    position: relative;
+}
+>>>>>>> 7984670978a1f355a66a184512325909fe46c53a
