@@ -2,6 +2,7 @@
     "use strict";
 
     (function loadPics(){
+
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
         var method = "flickr.photos.search";
         var user_id = "138698049@N03";
@@ -12,8 +13,11 @@
             if (data) {
                 createDomElm(data);
             }
-        });
-        function createDomElm(data){
+        }
+        xmlhttp.open("Get", url, true);
+        xmlhttp.send();
+    })();
+    function createDomElm(data){
             var farm, server, id, title, secret, picUrl, img;
 
             for(var i=0; i< data.photos.photo.length; i++){
