@@ -6,14 +6,11 @@ body, html {
     width: 80%;
     margin-left: 10%;
 }
-.image-slider-wrapper button{
-    border: none;
-}
 #list li{
     list-style: none;
 }
 
-#list img{
+#list img {
     width: 100px;
     position: relative;
 }
