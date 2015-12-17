@@ -1,0 +1,24 @@
+{
+  "name": "Flick-Poc",
+  "homepage": "https://github.com/cxoltero/Flick-poc",
+  "authors": [
+    "Roberto C. Hernandez <carlosh95@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4",
+    "lightbox2": "~2.8.2"
+  }
+}
