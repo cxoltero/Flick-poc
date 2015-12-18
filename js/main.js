@@ -11,21 +11,22 @@
 
 
         $.getJSON(url, function(data){
-            var items = [];
-            var farm, server, id, title, secret, picUrl, list, img, items;
-
             if (data) {
                 createDomElm(data);
             }
         });
-    }
-    function removeActiveAddCurrent(items){
-        items.classList.remove('active');
-        items.classList.add('current');
-    }
-    function removeCurrentAddActive(items){
-        items.classList.remove('current');
-        items.classList.add('active');
-    }
-    window.onload = loadPics();
+        function createDomElm(data){
+            var farm, server, id, title, secret, picUrl, img;
+
+            for(var i=0; i< data.photos.photo.length; i++){
+                farm = data.photos.photo[i].farm;
+                server = data.photos.photo[i].server;
+                id = data.photos.photo[i].id;
+                title = data.photos.photo[i].title;
+                secret = data.photos.photo[i].secret;
+                picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
+                $('.image-slider-wrapper ul').append("<li class='active imgArray' ><a data-lightbox='image-set'"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
+            }
+        }
+    })();
 })();
