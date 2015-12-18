@@ -10,9 +10,10 @@ body, html{
     list-style: none;
 }
 
-#list img{
+#list img {
     width: 100px;
     position: relative;
+}
 .imgArray{
     display: inline-block;
 }
