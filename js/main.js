@@ -10,7 +10,7 @@
         xmlhttp = new XMLHttpRequest();
 
         xmlhttp.onreadystatechange = function () {
-            var farm, server, id, title, secret, picUrl, items;
+            var items;
 
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var pics = [];
@@ -26,7 +26,7 @@
         xmlhttp.send();
     }
     function getCarousel(){
-        var box, next, counter, prev, items, amount, current;
+        var next, counter, prev, items, amount, current;
 
         next = document.getElementById('next');
         counter = 0;
@@ -42,7 +42,7 @@
                 removeCurrentAddActive(items);
             }
         }
-        next.addEventListener("click", function(event){
+        next.addEventListener("click", function(){
             items = document.getElementById('img'+counter);
             counter = counter+1;
 
@@ -57,7 +57,7 @@
             }
             navigate(0);
         });
-        prev.addEventListener("click", function(event){
+        prev.addEventListener("click", function(){
             items = document.getElementById('img'+counter);
 
             if(counter > 0){
@@ -75,6 +75,8 @@
         });
     };
     function photoData(pics, myResp){
+        var farm, server, id, title, secret, picUrl;
+
         for(var i=0; i< myResp.photos.photo.length; i++){
             farm = myResp.photos.photo[i].farm;
             server = myResp.photos.photo[i].server;
@@ -86,11 +88,11 @@
         };
     }
     function pupulate(pics){
-        for(var i=0; i<pics.length; i++){
+        for(var j=0; j<pics.length; j++){
             list = document.getElementById('list');
             img = '';
-            for(var i = 0; i<pics.length; i++){
-                list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[i]+'><img src=' + pics[i] + ' /></li>';
+            for(var j = 0; j<pics.length; j++){
+                list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[j]+'><img src=' + pics[j] + ' /></li>';
             }
         }
     }
@@ -103,7 +105,5 @@
         items.classList.add('active');
     }
 
-    window.onload = function execute(){
-        loadPics();
-    }
+    window.onload = loadPics();
 })();
