@@ -11,7 +11,6 @@
 
         xmlhttp.onreadystatechange = function () {
             var items;
-
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var pics = [];
                 var myResp = JSON.parse(xmlhttp.response);
@@ -75,13 +74,12 @@
         });
     };
     function photoData(pics, myResp){
-        var farm, server, id, title, secret, picUrl;
+        var farm, server, id, secret, picUrl;
 
         for(var i=0; i< myResp.photos.photo.length; i++){
             farm = myResp.photos.photo[i].farm;
             server = myResp.photos.photo[i].server;
             id = myResp.photos.photo[i].id;
-            title = myResp.photos.photo[i].title;
             secret = myResp.photos.photo[i].secret;
             picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
             pics.push(picUrl);
