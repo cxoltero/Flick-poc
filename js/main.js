@@ -6,7 +6,7 @@
         method = "flickr.photos.search";
         user_id = "138698049@N03";
         format = '&format=json';
-        url = "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
+        url = "https://api.flickr.com/services/rest?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
         xmlhttp = new XMLHttpRequest();
 
         xmlhttp.onreadystatechange = function () {
@@ -90,9 +90,8 @@
     function pupulate(pics){
         for(var j=0; j<pics.length; j++){
             list = document.getElementById('list');
-            img = '';
             for(var j = 0; j<pics.length; j++){
-                list.innerHTML = list.innerHTML + '<li class='+'active'+ ' id=img'+[j]+'><img src=' + pics[j] + ' /></li>';
+                list.innerHTML = list.innerHTML + "<li class= 'active' id='img"+[j]+"'><img src='" + pics[j] + "' /></li>";
             }
         }
     }
@@ -104,6 +103,5 @@
         items.classList.remove('current');
         items.classList.add('active');
     }
-
     window.onload = loadPics();
 })();
