@@ -7,11 +7,6 @@ $(document).ready(function(){
 (function(){
 >>>>>>> fixing conflics
     "use strict";
-<<<<<<< c3d35a91d5049e61cd116546c472ed3d54c7fa51
-
-    (function loadPics(){
-=======
->>>>>>> cleaning unnecesary code
 
     (function loadPics(){
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
