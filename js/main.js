@@ -1,4 +1,4 @@
-(function(){
+$(document).ready(function(){
     "use strict";
 
     (function loadPics(){
@@ -29,4 +29,4 @@
             }
         }
     })();
-})();
+});
