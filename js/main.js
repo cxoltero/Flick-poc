@@ -1,15 +1,13 @@
 
 (function(){
+    "use strict";
+
     (function loadPics(){
-        //supplied values from flickr
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
-        var secret = 'c73c5dcbac8e4a96';
         var method = "flickr.photos.search";
         var user_id = "138698049@N03";
         var format = '&format=json';
         var url = "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
-
-
 
         $.getJSON(url, function(data){
             if (data) {
@@ -26,7 +24,7 @@
                 title = data.photos.photo[i].title;
                 secret = data.photos.photo[i].secret;
                 picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-                $('.image-slider-wrapper ul').append("<li class='active imgArray' ><a data-lightbox='image-set'"+" href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
+                $('.image-slider-wrapper ul').append("<li class='active imgArray' ><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
             }
         }
     })();
