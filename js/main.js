@@ -1,11 +1,4 @@
-<<<<<<< 4ce4ff6a5cd5f0275978ed022614598e174e3bef
 $(document).ready(function(){
-=======
-
-
-
-(function(){
->>>>>>> fixing conflics
     "use strict";
 
     (function loadPics(){
@@ -23,7 +16,6 @@ $(document).ready(function(){
             }
         });
         function createDomElm(data){
-
             var farm, server, id, title, secret, picUrl, img;
 
             for(var i=0; i< data.photos.photo.length; i++){
@@ -37,8 +29,4 @@ $(document).ready(function(){
             }
         }
     })();
-<<<<<<< c762791afebbb7eb268dbcdb50c83950617b5b02
 });
-=======
-})();
->>>>>>> moved variables our of the getjson function into the create dom elements one
