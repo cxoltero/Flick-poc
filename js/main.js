@@ -1,6 +1,3 @@
-
-
-
 (function(){
     "use strict";
 
@@ -17,7 +14,6 @@
             }
         });
         function createDomElm(data){
-
             var farm, server, id, title, secret, picUrl, img;
 
             for(var i=0; i< data.photos.photo.length; i++){
