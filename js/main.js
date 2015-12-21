@@ -1,4 +1,6 @@
 (function() {
+    "use strict";
+
     function loadPics() {
         var api_key, method, user_id, format, url, xmlhttp;
 
@@ -11,7 +13,7 @@
 
         xmlhttp.onreadystatechange = function () {
             var items;
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 var pics = [];
                 var myResp = JSON.parse(xmlhttp.response);
                 photoData(pics, myResp);
@@ -72,8 +74,16 @@
             }
             navigate(-1);
         });
-    };
+    }
     function photoData(pics, myResp){
+        /**
+         * @param myResp          Information about the object.
+         * @param myResp.photos   Information about the object's members.
+         * @param myResp.photos.photo   Information about the object's members.
+         * @param myResp.photos.photo.farm   Information about the object's members.
+         * @param myResp.photos.photo.server   Information about the object's members.
+         * @param myResp.photos.photo.secret   Information about the object's members.
+         */
         var farm, server, id, secret, picUrl;
 
         for(var i=0; i< myResp.photos.photo.length; i++){
@@ -83,12 +93,12 @@
             secret = myResp.photos.photo[i].secret;
             picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
             pics.push(picUrl);
-        };
+        }
     }
     function pupulate(pics){
         for(var j=0; j<pics.length; j++){
-            list = document.getElementById('list');
-            for(var j = 0; j<pics.length; j++){
+            var list = document.getElementById('list');
+            for(j = 0; j<pics.length; j++){
                 list.innerHTML = list.innerHTML + "<li class= 'active' id='img"+[j]+"'><img src='" + pics[j] + "' /></li>";
             }
         }
@@ -96,7 +106,7 @@
     function removeActiveAddCurrent(items){
         items.classList.remove('active');
         items.classList.add('current');
-    };
+    }
     function removeCurrentAddActive(items){
         items.classList.remove('current');
         items.classList.add('active');
