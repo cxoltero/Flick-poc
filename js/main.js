@@ -11,8 +11,6 @@ $(document).ready(function(){
         $.getJSON(url, function(data){
             if (data) {
                 createDomElm(data);
-            }else{
-                return
             }
         });
         function createDomElm(data){
