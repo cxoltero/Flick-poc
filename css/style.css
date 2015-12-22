@@ -1,61 +1,20 @@
-body, html{
-    margin : 0;
-    padding : 0;
+body, html {
+    margin: 0;
+    padding: 0;
 }
 .container{
     width: 80%;
     margin-left: 10%;
 }
-
-.image-slider-wrapper{
-    width: 100%;
-    position: relative;
-    margin: 1rem;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 10px #ccc;
-    overflow: hidden;
-    background-color: black;
-}
-#list{
-     margin: 0;
-     padding: 0;
- }
-#list  li{
+#list li{
     list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-    display: block;
- }
-
-#list li img{
-    max-width: 100%;
-    max-height: 75vh;
+    margin: 0 auto;
 }
-.active{
-    display: none;
-}
-
-.active img{
-    display: none;
-}
-.active .button{
-    padding: 5px 0;
-    background: #eee;
-    text-align: center;
-    z-index: 10;
+#list img{
+    width: 100px;
     position: relative;
+    display: inline-block;
 }
-.image-slider-wrapper button{
-    border: none;
-}
-.active button{
-    display: block;
-}
-#prev{
-    float: left;
-}
-#next{
-    float: right;
+.imgArray{
+    display: inline-block;
 }
