@@ -12,13 +12,12 @@
         $.getJSON(url, function(data){
             if (data) {
                 createDomElm(data);
-                addActiveclass();
             }
         });
         function createDomElm(data){
             var farm, server, id, title, secret, picUrl, img, currentPhoto;
 
-            for(var i=0; i< data.photos.photo.length; i++){
+            for(var i=0; i< data.photos.photo.length; i++) {
                 currentPhoto = data.photos.photo[i];
 
                 farm = currentPhoto.farm;
@@ -26,15 +25,13 @@
                 id = currentPhoto.id;
                 title = currentPhoto.title;
                 secret = currentPhoto.secret;
-                picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-                $('.carousel-inner').append("<div class='item' ><img src='" +picUrl+"'/></div>");
+                picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
+
+                if(i%4 === 0){
+                    $('.image-slider-wrapper').append("<div class='row'></div>");
+                }
+                $('.image-slider-wrapper>.row:last-child').append("<a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='col-xs-3' "+ " src='" +picUrl+"'/></a>");
             }
         }
-        function addActiveclass(){
-            $('.carousel').carousel({
-                interval:3000
-            });
-            $(".item:first-child").addClass('active');
-        };
     };
 })(jQuery);

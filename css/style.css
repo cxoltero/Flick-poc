@@ -6,11 +6,13 @@ body, html {
     width: 80%;
     margin-left: 10%;
 }
-#title{
-    font-size: 3rem;
+.row-slider-wrapper img{
+    width: 100%;
 }
-.carousel-inner > .item > img{
-    min-height: 300px;
-    max-width: 100%;
-    margin: 0 auto;
+.row{
+    margin-top: 25px;
+}
+.lb-container{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, .2);
 }
