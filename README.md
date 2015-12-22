@@ -23,3 +23,8 @@ Run `http-server` from the root of the project
 ## Phase 3
 1. Use bower to install Bootstrap
 2. Style the app using Bootstrap CSS
+
+## Phase 4
+1. Install and configure the [QUit Testing framework](https://qunitjs.com/)
+2. Create a separate HTML file (`tests.html`) to display test results
+3. Write unit tests for the jQuery logic
