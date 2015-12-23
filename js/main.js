@@ -30,7 +30,7 @@
                 if(i%4 === 0){
                     $('.image-slider-wrapper').append("<div class='row'></div>");
                 }
-                $('.image-slider-wrapper>.row:last-child').append("<a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='col-xs-3' "+ " src='" +picUrl+"'/></a>");
+                $('.image-slider-wrapper>.row:last-child').append("<div class='col-xs-3'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
             }
         }
     };
