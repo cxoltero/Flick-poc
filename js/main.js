@@ -17,7 +17,7 @@
         function createDomElm(data){
             var farm, server, id, title, secret, picUrl, img, currentPhoto;
 
-            for(var i=0; i< data.photos.photo.length; i++){
+            for(var i=0; i< data.photos.photo.length; i++) {
                 currentPhoto = data.photos.photo[i];
 
                 farm = currentPhoto.farm;
@@ -25,8 +25,9 @@
                 id = currentPhoto.id;
                 title = currentPhoto.title;
                 secret = currentPhoto.secret;
-                picUrl = "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_z.jpg";
-                $('.image-slider-wrapper ul').append("<li class='active imgArray' ><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='active' "+ " src='" +picUrl+"'/></a></li>");
+                picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
+
+                $('#images').append("<div class='col-float-fix col-xs-6 col-md-3 col-lg-1'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
             }
         }
     };
