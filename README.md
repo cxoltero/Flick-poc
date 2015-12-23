@@ -26,7 +26,7 @@ Run `http-server` from the root of the project
 3. Use Bootstrap classes to create three different display styles:
  - 2 columns for mobile
  - 4 columns for desktop
- - 12 columns for wide screens
+ - 10 columns for wide screens
 
 ## Phase 4
 1. Install and configure the [QUit Testing framework](https://qunitjs.com/)
