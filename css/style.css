@@ -9,7 +9,7 @@ body, html {
 #images img{
     margin-top: 15px;
 }
-.col-xs-6, .col-md-3, .col-lg-1{
+.col-float-fix{
     float: none;
     display: inline-block;
     vertical-align: middle;
