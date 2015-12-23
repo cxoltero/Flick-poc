@@ -7,5 +7,10 @@ body, html {
     background-color: rgba(255, 255, 255, .2);
 }
 #images img{
-    margin-top: 20px;
+    margin-top: 15px;
+}
+.col-xs-6, .col-md-3, .col-lg-1{
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
 }
