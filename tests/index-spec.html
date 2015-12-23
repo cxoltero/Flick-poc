@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Flickr-Poc</title>
+    <link rel="stylesheet" type="text/css" href="../bower_components/lightbox2/dist/css/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../bower_components/qunit/qunit/qunit.css">
+
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+<div class="navbar-wrapper">
+    <div class="container-fluid">
+        <nav>
+            <div class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand" id="logo">Flickr-Poc</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
+            <div class="image-slider-wrapper">
+                <div class="row" id="images"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="qunit"></div>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/lightbox2/src/js/lightbox.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../bower_components/qunit/qunit/qunit.js"></script>
+<script src="main.js"></script>
+<script src="main-spec.js"></script>
+</body>
+</html>
