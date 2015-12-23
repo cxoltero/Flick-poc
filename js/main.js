@@ -27,10 +27,7 @@
                 secret = currentPhoto.secret;
                 picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
 
-                if(i%4 === 0){
-                    $('.image-slider-wrapper').append("<div class='row'></div>");
-                }
-                $('.image-slider-wrapper>.row:last-child').append("<div class='col-xs-3'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
+                $('#images').append("<div class='col-xs-6 col-md-4 col-lg-2'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
             }
         }
     };
