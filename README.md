@@ -28,7 +28,22 @@ Run `http-server` from the root of the project
  - 4 columns for desktop
  - 12 columns for wide screens
 
+## ~~Phase 4~~ Abandoned*
+1. ~~Install and configure the [QUnit Testing framework](https://qunitjs.com/)~~
+2. ~~Create a separate HTML file (`tests.html`) to display test results~~
+3. ~~Write unit tests for the jQuery logic~~
+
+*This Phase was abandoned due to QUnit shortcomings. Moving to a Karma/Mocha/Chai setup
+
 ## Phase 4
-1. Install and configure the [QUit Testing framework](https://qunitjs.com/)
-2. Create a separate HTML file (`tests.html`) to display test results
-3. Write unit tests for the jQuery logic
+1. Use npm to install [Karma](http://karma-runner.github.io/0.13/index.html), [Mocha](https://mochajs.org/), and [Chai](http://chaijs.com/)
+2. Create the basic test infrastructure
+3. Use `package.json` to implement a `npm test` task which will run the Karma tests. See the [npm-scripts docs](https://docs.npmjs.com/misc/scripts) for details
+4. Create a simple test to verify the suite runs properly.
+Example:
+```
+it('should pass', function(){
+  expect(true).to.equal(true);
+});
+```
+
