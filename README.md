@@ -7,7 +7,10 @@ This application is intended to be a slideshow to pull images from Flickr and di
 3. Install a node webserver - `npm install -g http-server`
 
 # Development
-Run `http-server` from the root of the project
+Run `http-server` from the root of the project.
+
+# Testing
+Run `npm test` to start the Karma test runner.
 
 # Objectives
 ## Phase 1
@@ -46,4 +49,11 @@ it('should pass', function(){
   expect(true).to.equal(true);
 });
 ```
+## Phase 5
+1. Convert the application to AngularJS, leaving jQuery as a dependency leveraged by Angular.
+2. Create AngularJS constructs using a TDD procedure:
+ - Service to handle the data retrieval from Flickr
+ - Controller to handle view logic
+ - Directive for the slide show and slides
 
+**Note:** It's considered best practice to build the app in pieces/components. Meaning that, ideally, we create a service to retrieve the data. Then, create a controller that uses that service to access the data. Finally, a directive is created, which excepts the data now present in the controller, and outputs the appropriate HTML. Each of these pieces should be tested and reviewed before the next is built.
