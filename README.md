@@ -7,10 +7,14 @@ This application is intended to be a slideshow to pull images from Flickr and di
 3. Install a node webserver - `npm install -g http-server`
 
 # Development
-Run `http-server` from the root of the project.
+1. Clone this repo
+2. Run `npm install`
+3. Run `bower install`
+4. `cd src`
+5. Run `http-server` from the root of the project.
 
 # Testing
-Run `npm test` to start the Karma test runner.
+Run `npm test` to start the Karma test runner and watch the source files.
 
 # Objectives
 ## Phase 1
