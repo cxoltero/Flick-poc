@@ -1,19 +1,18 @@
-(function(jQuery){
+(function($){
     "use strict";
 
-    jQuery(document).ready(loadPics);
-
+    $(document).ready(loadPics);
     var formUrl= function(){
         var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
         var method = "flickr.photos.search";
         var user_id = "138698049@N03";
         var format = '&format=json';
-        var url =  "https://api.flickr.com/services/rest?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
+        var url =  "https://api.flickr.com/services/rest"+"?method="+method+"&api_key="+api_key+"&user_id="+user_id+format+'&nojsoncallback=1';
         return url;
     };
 
     var addImgtoObject = function(picUrl){
-        jQuery('#images').append("<div class='col-float-fix col-xs-6 col-md-3 col-lg-1'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
+        $('#images').append("<div class='col-float-fix col-xs-6 col-md-3 col-lg-1'><a data-lightbox='image-set'" + " href='" + picUrl + "'><img class='img-responsive' "+ " src='" +picUrl+"'/></a></div>");
     };
 
     var createDomElm = function(data) {
@@ -33,11 +32,10 @@
     };
 
     function loadPics(){
-        jQuery.getJSON(formUrl(), function(data){
+        $.getJSON(formUrl(), function(data){
             if (data) {
                 createDomElm(data);
             }
         });
     }
 })(jQuery);
-
