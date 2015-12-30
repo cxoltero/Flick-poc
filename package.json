@@ -1,0 +1,35 @@
+{
+  "name": "flick-poc",
+  "version": "1.0.0",
+  "description": "This application is intended to be a slideshow to pull images from Flickr and display them as a slideshow to the user.",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cxoltero/Flick-poc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cxoltero/Flick-poc/issues"
+  },
+  "homepage": "https://github.com/cxoltero/Flick-poc#readme",
+  "devDependencies": {
+    "chai": "3.4.1",
+    "karma": "0.13.16",
+    "karma-browserify": "4.4.2",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.2.2",
+    "karma-firefox-launcher": "0.1.7",
+    "karma-mocha": "0.2.1",
+    "karma-phantomjs-launcher": "0.2.2",
+    "karma-requirejs": "0.2.2",
+    "karma-safari-launcher": "0.1.1",
+    "karma-sinon": "1.0.4",
+    "mocha": "2.3.4",
+    "phantomjs": "1.9.19",
+    "sinon": "1.17.2"
+  }
+}
