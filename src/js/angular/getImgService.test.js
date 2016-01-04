@@ -17,7 +17,7 @@ describe('getImagesService', function(){
                 expect(ImgService.loadPics).to.exist();
             });
             it('should use $http to retrieve data', function(){
-                var spy = sinon.spy($http, 'get'); /*global describe:true*/
+                var spy = sinon.spy($http, 'get');
                 var method = "flickr.photos.search";
                 var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
                 var user_id = "138698049@N03";
@@ -75,7 +75,7 @@ describe('getImagesService', function(){
                 expect(ImgService.createImagesArray).to.exist();
             });
             it('should return an array', function(){
-                assert(Array.isArray(getImages()));
+                expect(Array.isArray(getImages())).to.be.true();
             });
             it('should not be undefined', function(){
                 expect(getImages()).should.not.be.undefined();
@@ -95,7 +95,7 @@ describe('getImagesService', function(){
             it('should get each url as a string', function(){
                 var picsArray = ImgService.createImagesArray(sampleJSON);
                 for(var i = 0; i < picsArray.length; i++) {
-                    assert(typeof(picsArray[i], "string"), 'URL is a string');
+                    expect(typeof(picsArray[i])).to.equal('string');
                 }
             });
             it('should concatenate the contents of the given object', function() {
@@ -112,7 +112,7 @@ describe('getImagesService', function(){
                         secret = currentPhoto.secret;
                         picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
                         images.push(picUrl);
-                        assert(images[i], "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
+                        expect(images[i]).to.equal("https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
                     }
                 };
                 createImagesArray(sampleJSON);
