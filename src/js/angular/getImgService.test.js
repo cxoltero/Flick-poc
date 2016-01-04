@@ -12,28 +12,24 @@ describe('getImagesService', function(){
     }));
 
     describe('loadPics', function(){
-
         describe('stub service call', function(){
             it('should exist', function(){
-                expect(ImgService.loadPics).to.exist;
+                expect(ImgService.loadPics).to.exist();
             });
-
             it('should use $http to retrieve data', function(){
-                var spy = sinon.spy($http, 'get');
+                var spy = sinon.spy($http, 'get'); /*global describe:true*/
                 var method = "flickr.photos.search";
                 var api_key = '74e47a159e15cbcb6139ba9c9df64c13';
                 var user_id = "138698049@N03";
                 var mockUrl = 'https://api.flickr.com/services/rest?method=' + method + '&api_key='+ api_key + '&user_id=' + user_id + '&format=json&nojsoncallback=1';
 
                 ImgService.loadPics();
-
                 expect(spy).to.have.been.calledWith(mockUrl);
             });
 
             it('should return a promise', function(){
-               expect(ImgService.loadPics().then).to.exist;
+               expect(ImgService.loadPics().then).to.exist();
             });
-
         });
     });
     describe('createImagesArray', function(){
@@ -70,64 +66,62 @@ describe('getImagesService', function(){
 
     };
 
-        describe('the data taken by createdDomElm', function(){
+        describe('should check the data taken by createdDomElm', function(){
+            var getImages = function(){
+                return ImgService.createImagesArray(sampleJSON);
+            };
+
+            it('should exist', function(){
+                expect(ImgService.createImagesArray).to.exist();
+            });
+            it('should return an array', function(){
+                assert(Array.isArray(getImages()));
+            });
             it('should not be undefined', function(){
-                ImgService.createImagesArray(sampleJSON);
-                expect(sampleJSON).should.not.equal('undefined');
+                expect(getImages()).should.not.equal('undefined');
+                expect(getImages()).should.not.be.undefined();
             });
             it('should not be null', function(){
-                ImgService.createImagesArray(sampleJSON);
-                expect(typeof(sampleJSON)).should.not.equal('null');
-            });
-            it('should take an object', function(){
-                ImgService.createImagesArray(sampleJSON);
-                expect(typeof(sampleJSON)).to.equal('object');
-            });
-            it('should measure the length of the object inside photos.photo ', function(){
-                expect(sampleJSON.photos.photo).should.exist;
-            });
-            it('length of object should return a number', function(){
-                expect(typeof(sampleJSON.photos.photo.length)).to.equal('number');
+                expect(typeof(getImages())).should.not.be.null();
             });
             it('should get the length of the object', function(){
-                expect(sampleJSON.photos.photo.length).to.equal(2);
+                expect(getImages().length).to.equal(2);
             });
         });
-        describe('create an array with urls inside of it', function(){
+
+        describe('should create an array with urls inside of it', function(){
             it('should return something', function(){
-                expect(typeof(ImgService.createImagesArray(sampleJSON))).to.not.equal('null');
+                expect(typeof(ImgService.createImagesArray(sampleJSON))).to.not.be.null();
             });
-            it('should get an array of urls as a return', function(){
+            it('should get each url as a string', function(){
                 var picsArray = ImgService.createImagesArray(sampleJSON);
                 for(var i = 0; i < picsArray.length; i++) {
-                    expect(typeof(picsArray[i])).to.equal('string');
+                    assert(typeof(picsArray[i], "string"), 'URL is a string');
                 }
             });
-        });
-        describe('it should concatenate the contents of the given object', function(){
-            var createImagesArray = function(data){
-                var farm, server, id, title, secret, picUrl, currentPhoto;
-                var images = [];
+            it('should concatenate the contents of the given object', function() {
+                var createImagesArray = function (data) {
+                    var farm, server, id, title, secret, picUrl, currentPhoto;
+                    var images = [];
 
-                for(var i = 0; i < data.photos.photo.length; i++) {
-                    currentPhoto = data.photos.photo[i];
-                    farm = currentPhoto.farm;
-                    server = currentPhoto.server;
-                    id = currentPhoto.id;
-                    title = currentPhoto.title;
-                    secret = currentPhoto.secret;
-                    picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
-                    images.push(picUrl);
-                    expect(images[i]).to.equal("https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg")
-                }
-            };
-            createImagesArray(sampleJSON);
+                    for (var i = 0; i < data.photos.photo.length; i++) {
+                        currentPhoto = data.photos.photo[i];
+                        farm = currentPhoto.farm;
+                        server = currentPhoto.server;
+                        id = currentPhoto.id;
+                        title = currentPhoto.title;
+                        secret = currentPhoto.secret;
+                        picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
+                        images.push(picUrl);
+                        assert(images[i], "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
+                    }
+                };
+                createImagesArray(sampleJSON);
+            });
         });
 
     });
 });
-
-
 
 
 /*

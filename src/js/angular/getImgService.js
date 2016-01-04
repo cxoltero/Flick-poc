@@ -13,12 +13,12 @@
                 var user_id = "138698049@N03";
                 var format = '&format=json';
                 var url = "https://api.flickr.com/services/rest" + "?method=" + method + "&api_key=" + api_key + "&user_id=" + user_id + format + '&nojsoncallback=1';
-
                 return url;
-
             }
+
         };
         this.createImagesArray = function(data){
+
             var farm, server, id, title, secret, picUrl, currentPhoto;
             var images = [];
 
@@ -34,6 +34,5 @@
             }
             return images;
         };
-
     });
 })(angular);
