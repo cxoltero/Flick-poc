@@ -1,6 +1,5 @@
+'use strict';
 describe('getImagesService', function(){
-    'use strict';
-
     var $http;
     var ImgService;
 
