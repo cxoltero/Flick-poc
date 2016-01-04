@@ -1,7 +1,7 @@
 (function (angular) {
     'use strict';
 
-    var app = angular.module('flickrPock', []);
+    var app = angular.module('flickrPOC', []);
     app.service('images', function ($http) {
 
         this.loadPics = function () {

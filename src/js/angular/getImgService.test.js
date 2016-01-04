@@ -4,7 +4,7 @@ describe('getImagesService', function(){
     var $http;
     var ImgService;
 
-    beforeEach(module('flickrPock'));
+    beforeEach(module('flickrPOC'));
 
     beforeEach(inject(function(_$http_, _images_){
         $http = _$http_;
