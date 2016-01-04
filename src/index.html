@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="flickrPOC">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Flickr-Poc</title>
-    <link rel="stylesheet" type="text/css" href="../bower_components/lightbox2/dist/css/lightbox.css">
-    <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href='/bower_components/lightbox2/dist/css/lightbox.css'>
+    <link rel="stylesheet" type="text/css" href="/bower_components/lightbox2/dist/css/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -16,7 +17,7 @@
                 <div class="navbar navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="#" class="navbar-brand" id="logo">Flickr-Poc</a>
+                            <a href="#" class="navbar-brand" id="logo">{{}}</a>
                         </div>
                     </div>
                 </div>
@@ -34,9 +35,12 @@
         </div>
     </div>
 
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<script src="../bower_components/lightbox2/src/js/lightbox.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/lightbox2/dist/js/lightbox.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="js/main.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<!--<script type="text/javascript" src="js/main.js"></script>-->
+<script type="text/javascript" src="js/flickr-module.js"></script>
+<script type="text/javascript" src="js/services/getImgService.js"></script>
 </body>
 </html>

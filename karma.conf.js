@@ -10,14 +10,15 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'mocha', 'chai', 'sinon'],
+    frameworks: ['browserify', 'mocha', 'chai', 'sinon-chai','dirty-chai'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'bower_components/jquery/dist/jquery.js',
-      'src/js/main.test.js',
-      'src/js/main.js'
+      'bower_components/angular/angular.js',
+       'bower_components/angular-mocks/angular-mocks.js',
+      'src/js/**/*.js'
     ],
 
 
