@@ -27,14 +27,16 @@
                 var images = [];
 
                 for(var i = 0; i < data.photos.photo.length; i++) {
-                        currentPhoto = data.photos.photo[i];
-                        farm = currentPhoto.farm;
-                        server = currentPhoto.server;
-                        id = currentPhoto.id;
-                        title = currentPhoto.title;
-                        secret = currentPhoto.secret;
-                        picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
-                        images.push(picUrl);
+                    currentPhoto = data.photos.photo[i];
+
+                    farm = currentPhoto.farm;
+                    server = currentPhoto.server;
+                    id = currentPhoto.id;
+                    title = currentPhoto.title;
+                    secret = currentPhoto.secret;
+                    picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
+
+                    images.push(picUrl);
                 }
 
                 return images;
