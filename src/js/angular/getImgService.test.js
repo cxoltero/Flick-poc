@@ -78,7 +78,6 @@ describe('getImagesService', function(){
                 assert(Array.isArray(getImages()));
             });
             it('should not be undefined', function(){
-                expect(getImages()).should.not.equal('undefined');
                 expect(getImages()).should.not.be.undefined();
             });
             it('should not be null', function(){
