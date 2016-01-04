@@ -6,11 +6,10 @@
         .service('images', images);
 
         function images($http){
-            var service = {
+            return {
                 loadPics: loadPics,
                 createImagesArray: createImagesArray
             };
-            return service;
 
             function loadPics() {
                 return $http.get(_formUrl());
