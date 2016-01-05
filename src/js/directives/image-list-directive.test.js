@@ -52,7 +52,7 @@ describe('Image List Directive', function () {
 
     it('should throw a "Images List Failed! Please provide an array." when NOT provided an array', function () {
       elm = compileDirective(noArrayTemplate, scope);
-      expect(spy).to.have.been.calledWith('Images List Failed! Please provide an array.')
+      expect(spy).to.have.been.calledWith('Images List Failed! Please provide an array.');
     });
 
     it('should throw an error if array does NOT contain all strings', function () {
@@ -72,8 +72,32 @@ describe('Image List Directive', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul li').length).to.equal(scope.mockImages.length);
     });
+    it('should create a A within the LI for each image', function () {
+      var elm = compileDirective(defaultTemplate, scope);
+      expect(elm.find('ul li a').length).to.equal(scope.mockImages.length);
+    });
+    it('should set a HREF attribute for each a that matches the path in the array', function () {
+      var elm = compileDirective(defaultTemplate, scope);
+      var imgUrl;
 
-    it('should create a IMG within the LI for each image', function () {
+      angular.forEach(scope.mockImages, function(url, index){
+        imgUrl = elm.find('ul li a').eq(index);
+        expect(imgUrl.attr('href')).to.equal(url);
+      });
+
+    });
+    it('should set a lightbox1 databox attribute for each a that matches the path in the array', function () {
+      var elm = compileDirective(defaultTemplate, scope);
+      var ligthbox;
+
+      angular.forEach(scope.mockImages, function(url, index){
+        ligthbox = elm.find('ul li a').eq(index);
+        expect(ligthbox.attr('data-lightbox')).to.equal('image-set');
+      });
+
+    });
+
+    it('should create a IMG within the A for each image', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul li img').length).to.equal(scope.mockImages.length);
     });
@@ -89,6 +113,18 @@ describe('Image List Directive', function () {
 
     });
 
+    it('should set a class of img-responsive for each IMG that matches the path in the array', function () {
+        var elm = compileDirective(defaultTemplate, scope);
+        var imgClass;
+
+        angular.forEach(scope.mockImages, function(url, index){
+            imgClass = elm.find('ul li img').eq(index);
+            expect(imgClass.attr('class')).to.equal('img-responsive');
+        });
+
+    });
+
   });
 
 });
+
