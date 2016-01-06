@@ -17,14 +17,16 @@ describe('Image List Directive', function () {
   beforeEach(inject(function (_$rootScope_, _$compile_, _$log_) {
     $rootScope = _$rootScope_;
     $compile = _$compile_;
+
+
     $log = _$log_;
 
     scope = $rootScope.$new();
 
     scope.mockImages = [
-      "https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg",
-      "https://farm2.staticflickr.com/5734/23780344905_0eb2a77a55_z.jpg",
-      "https://farm3.staticflickr.com/5724/12345664905_0eb2a77a55_z.jpg"
+        "https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg",
+        "https://farm2.staticflickr.com/5734/23780344905_0eb2a77a55_z.jpg",
+        "https://farm3.staticflickr.com/5724/12345664905_0eb2a77a55_z.jpg"
     ];
 
     scope.mockErrorArray = [{}, {}];
@@ -32,30 +34,30 @@ describe('Image List Directive', function () {
   }));
 
   function compileDirective(template, scope) {
-    var elm = angular.element(template);
-    $compile(elm)(scope);
-    scope.$apply();
-    return elm;
+      var elm = angular.element(template);
+      $compile(elm)(scope);
+      scope.$apply();
+      return elm;
   }
 
   describe('Error Handling', function () {
-    var spy, elm;
+      var spy, elm;
 
-    beforeEach(function () {
-      spy = sinon.spy($log, 'error');
-    });
+      beforeEach(function () {
+          spy = sinon.spy($log, 'error');
+      });
 
-    it('should throw a "Images List Failed! No images provided." error when no data is provided', function () {
+      it('should throw a "Images List Failed! No images provided." error when no data is provided', function () {
       elm = compileDirective(errorTemplate, scope);
       expect(spy).to.have.been.calledWith('Images List Failed! No images provided.');
     });
 
-    it('should throw a "Images List Failed! Please provide an array." when NOT provided an array', function () {
+      it('should throw a "Images List Failed! Please provide an array." when NOT provided an array', function () {
       elm = compileDirective(noArrayTemplate, scope);
       expect(spy).to.have.been.calledWith('Images List Failed! Please provide an array.');
     });
 
-    it('should throw an error if array does NOT contain all strings', function () {
+      it('should throw an error if array does NOT contain all strings', function () {
       elm = compileDirective(badArrayTemplate, scope);
       expect($log.error).to.have.been.calledWith('Images List Failed! Invalid image URL.');
     });
@@ -63,20 +65,20 @@ describe('Image List Directive', function () {
 
   describe('DOM Output', function () {
 
-    it('should create a UL tag', function () {
+      it('should create a UL tag', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul').length).to.equal(1);
     });
 
-    it('should create a LI for each image in the images array', function () {
+      it('should create a LI for each image in the images array', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul li').length).to.equal(scope.mockImages.length);
     });
-    it('should create a A within the LI for each image', function () {
+      it('should create a A within the LI for each image', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul li a').length).to.equal(scope.mockImages.length);
     });
-    it('should set a HREF attribute for each a that matches the path in the array', function () {
+      it('should set a HREF attribute for each a that matches the path in the array', function () {
       var elm = compileDirective(defaultTemplate, scope);
       var imgUrl;
 
@@ -86,7 +88,7 @@ describe('Image List Directive', function () {
       });
 
     });
-    it('should set a lightbox1 databox attribute for each a that matches the path in the array', function () {
+      it('should set a lightbox1 databox attribute for each a that matches the path in the array', function () {
       var elm = compileDirective(defaultTemplate, scope);
       var ligthbox;
 
@@ -97,12 +99,12 @@ describe('Image List Directive', function () {
 
     });
 
-    it('should create a IMG within the A for each image', function () {
+      it('should create a IMG within the A for each image', function () {
       var elm = compileDirective(defaultTemplate, scope);
       expect(elm.find('ul li img').length).to.equal(scope.mockImages.length);
     });
 
-    it('should set a SRC attribute for each IMG that matches the path in the array', function () {
+      it('should set a SRC attribute for each IMG that matches the path in the array', function () {
       var elm = compileDirective(defaultTemplate, scope);
       var img;
 
@@ -113,7 +115,7 @@ describe('Image List Directive', function () {
 
     });
 
-    it('should set a class of img-responsive for each IMG that matches the path in the array', function () {
+      it('should set a class of img-responsive for each IMG that matches the path in the array', function () {
         var elm = compileDirective(defaultTemplate, scope);
         var imgClass;
 
