@@ -135,7 +135,6 @@ describe('imagesCtrl', function() {
 
             it('Should log error message ', function(){
                 var errorMsg = 'Error loading images ';
-                console.log($log.error.logs);
                 expect($log.error.logs[0]).to.include(errorMsg);
             });
         });
