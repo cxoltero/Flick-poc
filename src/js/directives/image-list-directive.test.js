@@ -17,7 +17,9 @@ describe('Image List Directive', function () {
     beforeEach(inject(function (_$rootScope_, _$compile_, _$log_) {
         $rootScope = _$rootScope_;
         $compile = _$compile_;
+
         $log = _$log_;
+
         scope = $rootScope.$new();
 
         scope.mockImages = [
@@ -28,21 +30,7 @@ describe('Image List Directive', function () {
 
         scope.mockErrorArray = [{}, {}];
 
-    }));
-
-    function compileDirective(template, scope) {
-        var elm = angular.element(template);
-        $compile(elm)(scope);
-        scope.$apply();
-        return elm;
-    }
-
-    describe('Error Handling', function () {
-        var spy, elm;
-
-        beforeEach(function () {
-            spy = sinon.spy($log, 'error');
-        });
+      }));
 
         it('should throw a "Images List Failed! No images provided." error when no data is provided', function () {
             elm = compileDirective(errorTemplate, scope);
