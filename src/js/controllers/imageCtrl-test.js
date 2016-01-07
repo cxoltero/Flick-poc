@@ -56,18 +56,18 @@ describe('imagesCtrl', function() {
             images.loadPics.returns($q.resolve(mockImageObject));
         });
 
-        beforeEach(
-            function(){
-                vm.getImages();
-                $rootScope.$apply();
-            }
-        );
-
-        describe('returned flickr images object from http call', function(){
-
+        describe('getImages method should exist', function(){
             it('should exist', function () {
                 expect(vm.getImages).to.exist();
             });
+        });
+
+        beforeEach(function(){
+                vm.getImages();
+                $rootScope.$apply();
+        });
+
+        describe('returned flickr images object from http call', function(){
 
             it('should return an object', function () {
                 expect(angular.isObject(vm.images)).to.equal(true);
