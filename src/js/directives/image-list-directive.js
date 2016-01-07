@@ -37,7 +37,7 @@
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li><a data-lightbox="image-set" href="' + controller.images[i] + '" ><img class="img-responsive" src="' + controller.images[i] + '"/></a>a></li>');
+            iElem.find('ul').append('<li><a data-lightbox="image-set" href="' + controller.images[i] + '" ><img class="img-responsive" src="' + controller.images[i] + '"/></a></li>');
           }
         }
 
