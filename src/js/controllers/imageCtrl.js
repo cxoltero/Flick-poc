@@ -5,9 +5,9 @@
         .module('flickrPOC')
         .controller('imagesCtrl', imagesCtrl);
 
-    imagesCtrl.$inject = ['images', '$compile', '$http', '$q'];
+    imagesCtrl.$inject = ['images'];
 
-    function imagesCtrl(images, $compile, $http, $q) {
+    function imagesCtrl(images) {
         /* jshint validthis: true */
         var vm = this;
 
@@ -27,11 +27,11 @@
                 });
 
         };
-    //    function activate(){
-    //        vm.getImages();
-    //    }
-    //
-    //    activate();
+        function activate(){
+            vm.getImages();
+        }
+
+        //activate();
     }
 
 })(angular);

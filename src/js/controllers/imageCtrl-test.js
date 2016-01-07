@@ -1,7 +1,7 @@
 'use strict';
 
 describe('imagesCtrl', function() {
-    var $rootScope, $compile, $log, $controller, imagesCtrl, images, vm, $q;
+    var $rootScope, $controller, imagesCtrl, images, vm, $q;
 
     beforeEach(module('flickrPOC'));
 
@@ -12,10 +12,8 @@ describe('imagesCtrl', function() {
 
     }));
 
-    beforeEach(inject(function (_$rootScope_, _$compile_, _$log_, _$controller_, _images_, _$q_) {
-        $compile = _$compile_;
+    beforeEach(inject(function (_$rootScope_, _$controller_, _images_, _$q_) {
         $rootScope = _$rootScope_.$new();
-        $log = _$log_;
         $controller = _$controller_;
         images = _images_;
         $q = _$q_;
