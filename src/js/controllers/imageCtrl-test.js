@@ -50,7 +50,7 @@ describe('imagesCtrl', function() {
                 $controller = _$controller_;
                 images = _images_;
                 $q = _$q_;
-                $log = _$log_
+                $log = _$log_;
                 vm = $controller('imagesCtrl');
 
                 images.loadPics.returns($q.resolve(mockImageObject));
@@ -114,28 +114,29 @@ describe('imagesCtrl', function() {
         });
 
         describe('Error from to api', function() {
+
             beforeEach(module(function($provide){
-                $provide.service('images', function($q){
-                    this.loadPics = sinon.stub().returns($q.resolve({empty:'empty'}));
+                $provide.service('images', function($q, $log){
+                    this.loadPics = sinon.stub().returns($q.reject($log));
                 });
 
             }));
+
             beforeEach(inject(function (_$rootScope_, _$controller_, _images_, _$q_, _$log_) {
                 $rootScope = _$rootScope_.$new();
                 $controller = _$controller_;
                 images = _images_;
                 $q = _$q_;
-                $log = _$log_
+                $log = _$log_;
                 vm = $controller('imagesCtrl');
 
-                images.loadPics.returns($q.resolve(mockImageObject));
                 $rootScope.$apply();
             }));
 
-
             it('Should log error message ', function(){
-                //expect(vm.images.status).not.to.equal('success');
-                console.log();
+                var errorMsg = 'Error loading images ';
+                console.log($log.error.logs);
+                expect($log.error.logs[0]).to.include(errorMsg);
             });
         });
     });
