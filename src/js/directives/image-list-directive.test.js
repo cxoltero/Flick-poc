@@ -63,7 +63,6 @@ describe('Image List Directive', function () {
 
     describe('DOM Output', function () {
 
-<<<<<<< HEAD
         it('should create a UL tag', function () {
             var elm = compileDirective(defaultTemplate, scope);
             expect(elm.find('ul').length).to.equal(1);
