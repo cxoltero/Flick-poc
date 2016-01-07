@@ -122,8 +122,8 @@ describe('Image List Directive', function () {
         var imgClass;
 
         angular.forEach(scope.mockImages, function(url, index){
-          imgClass = elm.find('ul li img').eq(index);
-          expect(imgClass.attr('class')).to.equal('img-responsive');
+            imgClass = elm.find('ul li img').eq(index);
+            expect(imgClass.attr('class')).to.equal('img-responsive');
         });
 
       });
@@ -131,3 +131,4 @@ describe('Image List Directive', function () {
   });
 
 });
+

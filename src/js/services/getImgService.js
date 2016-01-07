@@ -42,5 +42,5 @@
                 return images;
             }
 
-    }
+        }
 })(angular);
