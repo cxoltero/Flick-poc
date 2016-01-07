@@ -17,9 +17,7 @@ describe('Image List Directive', function () {
     beforeEach(inject(function (_$rootScope_, _$compile_, _$log_) {
         $rootScope = _$rootScope_;
         $compile = _$compile_;
-
         $log = _$log_;
-
         scope = $rootScope.$new();
 
         scope.mockImages = [
@@ -62,8 +60,10 @@ describe('Image List Directive', function () {
         });
     });
 
+
     describe('DOM Output', function () {
 
+<<<<<<< HEAD
         it('should create a UL tag', function () {
             var elm = compileDirective(defaultTemplate, scope);
             expect(elm.find('ul').length).to.equal(1);
