@@ -15,20 +15,20 @@ describe('Image List Directive', function () {
   beforeEach(module('flickrPOC'));
 
   beforeEach(inject(function (_$rootScope_, _$compile_, _$log_) {
-      $rootScope = _$rootScope_;
-      $compile = _$compile_;
+    $rootScope = _$rootScope_;
+    $compile = _$compile_;
 
-      $log = _$log_;
+    $log = _$log_;
 
-      scope = $rootScope.$new();
+    scope = $rootScope.$new();
 
-      scope.mockImages = [
-          "https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg",
-          "https://farm2.staticflickr.com/5734/23780344905_0eb2a77a55_z.jpg",
-          "https://farm3.staticflickr.com/5724/12345664905_0eb2a77a55_z.jpg"
-      ];
+    scope.mockImages = [
+        "https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg",
+        "https://farm2.staticflickr.com/5734/23780344905_0eb2a77a55_z.jpg",
+        "https://farm3.staticflickr.com/5724/12345664905_0eb2a77a55_z.jpg"
+    ];
 
-      scope.mockErrorArray = [{}, {}];
+    scope.mockErrorArray = [{}, {}];
 
   }));
 
@@ -84,8 +84,8 @@ describe('Image List Directive', function () {
           var imgUrl;
 
           angular.forEach(scope.mockImages, function(url, index){
-              imgUrl = elm.find('ul li a').eq(index);
-              expect(imgUrl.attr('href')).to.equal(url);
+            imgUrl = elm.find('ul li a').eq(index);
+            expect(imgUrl.attr('href')).to.equal(url);
           });
 
       });
@@ -95,8 +95,8 @@ describe('Image List Directive', function () {
           var ligthbox;
 
           angular.forEach(scope.mockImages, function(url, index){
-              ligthbox = elm.find('ul li a').eq(index);
-              expect(ligthbox.attr('data-lightbox')).to.equal('image-set');
+            ligthbox = elm.find('ul li a').eq(index);
+            expect(ligthbox.attr('data-lightbox')).to.equal('image-set');
           });
 
       });
@@ -111,8 +111,8 @@ describe('Image List Directive', function () {
           var img;
 
           angular.forEach(scope.mockImages, function(url, index){
-              img = elm.find('ul li img').eq(index);
-              expect(img.attr('src')).to.equal(url);
+            img = elm.find('ul li img').eq(index);
+            expect(img.attr('src')).to.equal(url);
           });
 
       });
@@ -122,8 +122,8 @@ describe('Image List Directive', function () {
           var imgClass;
 
           angular.forEach(scope.mockImages, function(url, index){
-              imgClass = elm.find('ul li img').eq(index);
-              expect(imgClass.attr('class')).to.equal('img-responsive');
+            imgClass = elm.find('ul li img').eq(index);
+            expect(imgClass.attr('class')).to.equal('img-responsive');
           });
 
       });
