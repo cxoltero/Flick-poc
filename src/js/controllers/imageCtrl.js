@@ -6,13 +6,11 @@
     imagesCtrl.$inject = ['images'];
 
     function imagesCtrl(images) {
-        /* jshint validthis: true */
-        var vm = this;
+        var vm = this;// jshint ignore:line
 
         vm.getImages = function () {
             images.loadPics()
                 .then(function (res) {
-                    //console.log('this is not from test '+ res);
                     vm.images = res;
                     return vm.images;
                 })
