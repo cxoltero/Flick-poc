@@ -9,6 +9,7 @@
         var vm = this;// jshint ignore:line
 
         function activate(){
+
             images.loadPics()
                 .then(function (res) {
                     vm.images = res;

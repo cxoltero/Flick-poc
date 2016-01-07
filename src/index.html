@@ -17,7 +17,7 @@
                 <div class="navbar navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
-                            <a href="#" class="navbar-brand" id="logo">{{}}</a>
+                            <a href="#" class="navbar-brand" id="logo">FlickrPOC</a>
                         </div>
                     </div>
                 </div>
@@ -30,17 +30,21 @@
             <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2">
                 <div class="image-slider-wrapper">
                     <div class="row" id="images"></div>
+                    <ul>
+                        <li><a data-lightbox="image-set" href="' + controller.images[i] + '" ><img class="img-responsive" src="' + controller.images[i] + '"/></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/lightbox2/dist/js/lightbox.js"></script>
-<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="../bower_components/angular/angular.js"></script>
-<!--<script type="text/javascript" src="js/main.js"></script>-->
+<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="../bower_components/lightbox2/dist/js/lightbox.js"></script>
+<script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
 <script type="text/javascript" src="js/flickr-module.js"></script>
 <script type="text/javascript" src="js/services/getImgService.js"></script>
+<script type="text/javascript" src="js/controllers/imageCtrl.js"></script>
+<script type="text/javascript" src="js/directives/image-list-directive.js"></script>
 </body>
 </html>
