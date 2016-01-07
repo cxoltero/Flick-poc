@@ -18,7 +18,7 @@ describe('imagesCtrl', function() {
         $log = _$log_;
         $controller = _$controller_;
         images = _images_;
-        $q = _$q_
+        $q = _$q_;
 
         vm = $controller('imagesCtrl');
 
@@ -65,24 +65,31 @@ describe('imagesCtrl', function() {
                 vm.getImages();
                 $rootScope.$apply();
             }
-        )
+        );
+
         describe('returned flickr images object from http call', function(){
+
             it('should exist', function () {
                 expect(vm.getImages).to.exist();
             });
+
             it('should return an object', function () {
                 expect(angular.isObject(vm.images)).to.equal(true);
             });
+
             it('parent object should contain a photos object', function () {
                 expect(angular.isObject(vm.images.photos)).to.equal(true);
             });
+
             it('photos object should include an photo object', function(){
                 expect(angular.isObject(vm.images.photos.photo)).to.equal(true);
             });
 
         });
+
         describe('individual photo object', function(){
             var photo;
+
             beforeEach(function(){
                 photo = vm.images.photos.photo;
             });
@@ -97,6 +104,7 @@ describe('imagesCtrl', function() {
                     expect(photo[i].secret).to.exist();
                 }
             });
+
             it('check for neccesary attibutes to not be undefined ', function(){
                 for(var i = 0; i<photo.length; i++) {
                     expect(photo[i].farm).not.to.be.undefined();
@@ -106,6 +114,7 @@ describe('imagesCtrl', function() {
                     expect(photo[i].secret).not.to.be.undefined();
                 }
             });
+
             it('check for neccesary attibutes to not be null ', function(){
                 for(var i = 0; i<photo.length; i++) {
                     expect(photo[i].farm).not.to.be.null();
