@@ -30,7 +30,21 @@ describe('Image List Directive', function () {
 
         scope.mockErrorArray = [{}, {}];
 
-      }));
+    }));
+
+    function compileDirective(template, scope) {
+        var elm = angular.element(template);
+        $compile(elm)(scope);
+        scope.$apply();
+        return elm;
+    }
+
+    describe('Error Handling', function () {
+        var spy, elm;
+
+        beforeEach(function () {
+            spy = sinon.spy($log, 'error');
+        });
 
         it('should throw a "Images List Failed! No images provided." error when no data is provided', function () {
             elm = compileDirective(errorTemplate, scope);
@@ -47,7 +61,6 @@ describe('Image List Directive', function () {
             expect($log.error).to.have.been.calledWith('Images List Failed! Invalid image URL.');
         });
     });
-
 
     describe('DOM Output', function () {
 
