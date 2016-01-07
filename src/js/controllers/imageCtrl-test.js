@@ -1,5 +1,36 @@
 describe('imagesCtrl', function() {
-    var $rootScope, $controller, imagesCtrl, images, vm, $q;
+    var $rootScope, $controller, imagesCtrl, images, vm, $q, mockImageObject;
+
+    mockImageObject = {
+        contentType: "text/json",
+        status: "success",
+        photos: {
+            photo: [
+                {
+                    farm: 6,
+                    id: "23780914905",
+                    isfamily: 0,
+                    isfriend: 0,
+                    ispublic: 1,
+                    owner: "138698049@N03",
+                    secret: "0eb2a77a55",
+                    server: "5764",
+                    title: ""
+                },
+                {
+                    farm: 1,
+                    id: "23698470321",
+                    isfamily: 0,
+                    isfriend: 0,
+                    ispublic: 1,
+                    owner: "138698049@N03",
+                    secret: "1d4dc255d0",
+                    server: "693",
+                    title: ""
+                }
+            ]
+        }
+    };
 
     beforeEach(module('flickrPOC'));
 
@@ -22,38 +53,7 @@ describe('imagesCtrl', function() {
 
     describe('imagesCtrl', function(){
         beforeEach(function () {
-            images.loadPics.returns($q.resolve(
-                {
-                    contentType: "text/json",
-                    status: "success",
-                    photos: {
-                        photo: [
-                            {
-                            farm: 6,
-                            id: "23780914905",
-                            isfamily: 0,
-                            isfriend: 0,
-                            ispublic: 1,
-                            owner: "138698049@N03",
-                            secret: "0eb2a77a55",
-                            server: "5764",
-                            title: ""
-                        },
-                            {
-                            farm: 1,
-                            id: "23698470321",
-                            isfamily: 0,
-                            isfriend: 0,
-                            ispublic: 1,
-                            owner: "138698049@N03",
-                            secret: "1d4dc255d0",
-                            server: "693",
-                            title: ""
-                        }
-                        ]
-                    }
-                }
-            ));
+            images.loadPics.returns($q.resolve(mockImageObject));
         });
 
         beforeEach(
