@@ -64,7 +64,7 @@ describe('getImagesService', function(){
             }
 
 
-        };
+    };
         var getImages;
 
         beforeEach(function(){
