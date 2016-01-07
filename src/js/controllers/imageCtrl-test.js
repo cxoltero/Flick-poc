@@ -96,33 +96,33 @@ describe('imagesCtrl', function() {
 
 
             it('check for neccesary attibutes', function(){
-                for(var i = 0; i<photo.length; i++) {
-                    expect(photo[i].farm).to.exist();
-                    expect(photo[i].server).to.exist();
-                    expect(photo[i].id).to.exist();
-                    expect(photo[i].owner).to.exist();
-                    expect(photo[i].secret).to.exist();
-                }
+                angular.forEach(photo, function(value){
+                    expect(value.farm).to.exist();
+                    expect(value.server).to.exist();
+                    expect(value.id).to.exist();
+                    expect(value.owner).to.exist();
+                    expect(value.secret).to.exist();
+                });
             });
 
             it('check for neccesary attibutes to not be undefined ', function(){
-                for(var i = 0; i<photo.length; i++) {
-                    expect(photo[i].farm).not.to.be.undefined();
-                    expect(photo[i].server).not.to.be.undefined();
-                    expect(photo[i].id).not.to.be.undefined();
-                    expect(photo[i].owner).not.to.be.undefined();
-                    expect(photo[i].secret).not.to.be.undefined();
-                }
+                angular.forEach(photo, function(value){
+                    expect(value.farm).not.to.be.undefined();
+                    expect(value.server).not.to.be.undefined();
+                    expect(value.id).not.to.be.undefined();
+                    expect(value.owner).not.to.be.undefined();
+                    expect(value.secret).not.to.be.undefined();
+                });
             });
 
             it('check for neccesary attibutes to not be null ', function(){
-                for(var i = 0; i<photo.length; i++) {
-                    expect(photo[i].farm).not.to.be.null();
-                    expect(photo[i].server).not.to.be.null();
-                    expect(photo[i].id).not.to.be.null();
-                    expect(photo[i].owner).not.to.be.null();
-                    expect(photo[i].secret).not.to.be.null();
-                }
+                angular.forEach(photo, function(value){
+                    expect(value.farm).not.to.be.null();
+                    expect(value.server).not.to.be.null();
+                    expect(value.id).not.to.be.null();
+                    expect(value.owner).not.to.be.null();
+                    expect(value.secret).not.to.be.null();
+                });
             });
 
         });
