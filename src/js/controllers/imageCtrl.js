@@ -15,10 +15,9 @@
                     vm.images = res;
                     return vm.images;
                 })
-                .catch(
-                    function(err){
-                        $log.error('Error loading images ', err.status, err.data);
-                    });
+                .catch(function(err){
+                    $log.error('Error loading images ', err.status, err.data);
+                });
         }
 
         activate();
