@@ -90,7 +90,6 @@ describe('imagesCtrl', function() {
                 photo = vm.images.photos.photo;
             });
 
-
             it('check for neccesary attibutes', function(){
                 angular.forEach(photo, function(value){
                     expect(value.farm).to.exist();
