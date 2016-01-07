@@ -18,7 +18,6 @@ describe('Image List Directive', function () {
     $rootScope = _$rootScope_;
     $compile = _$compile_;
 
-
     $log = _$log_;
 
     scope = $rootScope.$new();
