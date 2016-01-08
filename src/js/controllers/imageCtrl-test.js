@@ -34,7 +34,6 @@ describe('imagesCtrl', function() {
         }
 
     };
-
     mockImageArray = ['https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg', 'https://farm1.staticflickr.com/693/23698470321_1d4dc255d0_z.jpg'];
 
     beforeEach(module('flickrPOC'));
@@ -59,6 +58,7 @@ describe('imagesCtrl', function() {
                 vm = $controller('imagesCtrl');
 
                 $rootScope.$apply();
+
             }));
 
             describe('return flickr images from object from http call', function(){
@@ -77,22 +77,27 @@ describe('imagesCtrl', function() {
                        expect(angular.isString(value)).to.equal(true);
                    });
                });
+
                it('Each strings must have an http address', function(){
                    angular.forEach(imageArray, function(value){
                        expect(value.substr(0, 8)).to.equal('https://');
                    });
                });
+
                it('Each strings must have an flickr address', function(){
                    angular.forEach(imageArray, function(value){
                        expect(value).to.contain('.staticflickr.com');
                    });
                });
+
                it('Each strings must have an flickr address', function(){
                    angular.forEach(imageArray, function(value){
                        expect(value.substr(-4, 4)).to.match(/^\.|\.jpg$|\.gif$|.png$/);
                    });
                });
+
             });
+
         });
 
         describe('Error from to api', function() {
@@ -117,6 +122,7 @@ describe('imagesCtrl', function() {
 
             it('Should log error message ', function(){
                 var errorMsg = 'Error loading images ';
+
                 expect($log.error.logs[0]).to.include(errorMsg);
             });
         });
