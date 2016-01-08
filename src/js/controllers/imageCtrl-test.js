@@ -58,7 +58,6 @@ describe('imagesCtrl', function() {
                 $log = _$log_;
                 vm = $controller('imagesCtrl');
 
-                images.loadPics.returns($q.resolve(mockImageArray));
                 $rootScope.$apply();
             }));
 
