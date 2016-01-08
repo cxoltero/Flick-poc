@@ -17,7 +17,8 @@
 
                 })
                 .catch(function(err){
-                    $log.error('Error loading images ', err.status, err.data);
+                    $log.error(err.message, err.stat, err.code);
+
                 });
         }
 

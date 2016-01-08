@@ -101,10 +101,13 @@ describe('imagesCtrl', function() {
         });
 
         describe('Error from to api', function() {
+            var errorObject = { "stat": "fail", "code": 2, "message": "Unknown user" }
+            var errorMsg = 'Unknown user';
 
             beforeEach(module(function($provide){
                 $provide.service('images', function($q){
-                    this.loadPics = sinon.stub().returns($q.reject({}));
+                    this.loadPics = sinon.stub().returns($q.reject(errorObject));
+
                 });
 
             }));
@@ -121,10 +124,10 @@ describe('imagesCtrl', function() {
             }));
 
             it('Should log error message ', function(){
-                var errorMsg = 'Error loading images ';
+                expect($log.error.logs[0][0]).to.include(errorMsg);
 
-                expect($log.error.logs[0]).to.include(errorMsg);
             });
+
         });
     });
 });
