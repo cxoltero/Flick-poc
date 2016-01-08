@@ -46,7 +46,7 @@
     }
   }
 
-  ImagesListController.$inject = [];
+  ImagesListController.$inject = ['images'];
 
   function ImagesListController() {
   }

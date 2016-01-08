@@ -1,9 +1,10 @@
 'use strict';
 
-describe('imagesCtrl', function() {
+describe('imagesCtrl', function () {
     var $rootScope, $controller, imagesCtrl, images, vm, $q, mockImageArray, $log, sampleJSON;
 
-    sampleJSON = {contentType: "text/json",
+    sampleJSON = {
+        contentType: "text/json",
         status: "success",
 
         photos: {
@@ -38,96 +39,87 @@ describe('imagesCtrl', function() {
 
     beforeEach(module('flickrPOC'));
 
-    describe('imagesCtrl', function(){
+    beforeEach(module(function ($provide) {
+        $provide.service('images', function ($q) {
+            this.loadPics = sinon.stub().returns($q.resolve(sampleJSON));
+            this.createImagesArray = sinon.stub().returns($q.resolve(mockImageArray));
+        });
 
-        describe('Sucessful call to api', function() {
-            beforeEach(module(function ($provide) {
-                $provide.service('images', function ($q) {
-                    this.loadPics = sinon.stub().returns($q.resolve(sampleJSON));
-                    this.createImagesArray = sinon.stub().returns($q.resolve(mockImageArray));
-                });
+    }));
 
-            }));
+    beforeEach(inject(function (_$rootScope_, _$controller_, _images_, _$q_, _$log_) {
+        $rootScope = _$rootScope_.$new();
+        $controller = _$controller_;
+        images = _images_;
+        $q = _$q_;
+        $log = _$log_;
+        vm = $controller('imagesCtrl');
 
-            beforeEach(inject(function (_$rootScope_, _$controller_, _images_, _$q_, _$log_) {
-                $rootScope = _$rootScope_.$new();
-                $controller = _$controller_;
-                images = _images_;
-                $q = _$q_;
-                $log = _$log_;
-                vm = $controller('imagesCtrl');
+        $rootScope.$apply();
 
-                $rootScope.$apply();
+    }));
 
-            }));
+    describe('imagesCtrl', function () {
 
-            describe('return flickr images from object from http call', function(){
+        describe('Sucessful call to api', function () {
+
+            describe('return flickr images from object from http call', function () {
                 var imageArray;
 
-                beforeEach(function(){
+                beforeEach(function () {
                     imageArray = vm.images.$$state.value;
                 });
 
-               it('should return an array of images', function(){
-                   expect(angular.isArray(imageArray)).to.equal(true);
-               });
+                it('should return an array of images', function () {
+                    expect(angular.isArray(imageArray)).to.equal(true);
+                });
 
-               it('Should have all strings', function(){
-                   angular.forEach(imageArray, function(value){
-                       expect(angular.isString(value)).to.equal(true);
-                   });
-               });
+                it('Should have all strings', function () {
+                    angular.forEach(imageArray, function (value) {
+                        expect(angular.isString(value)).to.equal(true);
+                    });
+                });
 
-               it('Each strings must have an http address', function(){
-                   angular.forEach(imageArray, function(value){
-                       expect(value.substr(0, 8)).to.equal('https://');
-                   });
-               });
+                it('Each strings must have an http address', function () {
+                    angular.forEach(imageArray, function (value) {
+                        expect(value.substr(0, 8)).to.equal('https://');
+                    });
+                });
 
-               it('Each strings must have an flickr address', function(){
-                   angular.forEach(imageArray, function(value){
-                       expect(value).to.contain('.staticflickr.com');
-                   });
-               });
+                it('Each strings must have an flickr address', function () {
+                    angular.forEach(imageArray, function (value) {
+                        expect(value).to.contain('.staticflickr.com');
+                    });
+                });
 
-               it('Each strings must have an flickr address', function(){
-                   angular.forEach(imageArray, function(value){
-                       expect(value.substr(-4, 4)).to.match(/^\.|\.jpg$|\.gif$|.png$/);
-                   });
-               });
+                it('Each strings must have an flickr address', function () {
+                    angular.forEach(imageArray, function (value) {
+                        expect(value.substr(-4, 4)).to.match(/^\.|\.jpg$|\.gif$|.png$/);
+                    });
+                });
 
             });
 
         });
 
-        describe('Error from to api', function() {
-            var errorObject = { "stat": "fail", "code": 2, "message": "Unknown user" }
-            var errorMsg = 'Unknown user';
+        describe('Error from connecting to api', function () {
+            var errorObject = {"stat": "fail", "code": 2, "message": "Unknown user"};
 
-            beforeEach(module(function($provide){
-                $provide.service('images', function($q){
-                    this.loadPics = sinon.stub().returns($q.reject(errorObject));
+            beforeEach(function () {
+                images.loadPics
+                    .returns($q.reject(errorObject));
+            });
 
-                });
-
-            }));
-
-            beforeEach(inject(function (_$rootScope_, _$controller_, _images_, _$q_, _$log_) {
-                $rootScope = _$rootScope_.$new();
-                $controller = _$controller_;
-                images = _images_;
-                $q = _$q_;
-                $log = _$log_;
+            it('Register a log error', function () {
+                var spy = sinon.spy($log, 'error');
                 vm = $controller('imagesCtrl');
 
                 $rootScope.$apply();
-            }));
 
-            it('Should log error message ', function(){
-                expect($log.error.logs[0][0]).to.include(errorMsg);
-
+                expect(spy).to.have.been.called();
             });
 
         });
     });
 });
+
