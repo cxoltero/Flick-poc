@@ -103,8 +103,8 @@ describe('imagesCtrl', function() {
         describe('Error from to api', function() {
 
             beforeEach(module(function($provide){
-                $provide.service('images', function($q, $log){
-                    this.loadPics = sinon.stub().returns($q.reject($log));
+                $provide.service('images', function($q){
+                    this.loadPics = sinon.stub().returns($q.reject({}));
                 });
 
             }));
