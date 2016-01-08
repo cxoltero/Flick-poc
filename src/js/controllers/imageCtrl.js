@@ -14,7 +14,7 @@
             images.loadPics()
                 .then(function (res) {
                     vm.images = images.createImagesArray(res.data);
-                    //return vm.images;
+
                 })
                 .catch(function(err){
                     $log.error('Error loading images ', err.status, err.data);

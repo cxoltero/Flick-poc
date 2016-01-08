@@ -33,9 +33,10 @@ describe('imagesCtrl', function() {
             ]
         }
 
-
     };
+
     mockImageArray = ['https://farm6.staticflickr.com/5764/23780914905_0eb2a77a55_z.jpg', 'https://farm1.staticflickr.com/693/23698470321_1d4dc255d0_z.jpg'];
+
     beforeEach(module('flickrPOC'));
 
     describe('imagesCtrl', function(){
