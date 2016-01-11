@@ -67,17 +67,3 @@
   }
 
 })(angular);
-
-/*
- Accept an array of images === <div images-list image="{{ARRAY}}"></div>
- If no array, throw error asking for array.
- Output a list of images, with lightbox attributes/classes
- Each image, when clicked, opens in lightbox
- */
-
-/*
- View Controller
- Retrieve the images via Service
- Store images array in VM property
- VM property passed to directive. <-- ARRAY
- */
