@@ -117,7 +117,7 @@ describe('getImagesService', function(){
                         images.push(picUrl);
                         expect(images[counter]).to.equal("https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
 
-                       counter++;
+                       ++counter;
                     });
                 };
 
