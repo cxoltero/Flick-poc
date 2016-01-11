@@ -19,7 +19,7 @@
   "homepage": "https://github.com/cxoltero/Flick-poc#readme",
   "devDependencies": {
     "chai": "2.3.0",
-    "dirty-chai": "^1.2.2",
+    "dirty-chai": "1.2.2",
     "karma": "0.13.16",
     "karma-browserify": "4.4.2",
     "karma-chai": "0.1.0",

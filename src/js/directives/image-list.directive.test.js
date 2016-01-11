@@ -118,13 +118,13 @@ describe('Image List Directive', function () {
       });
 
       it('should set a class of img-responsive for each IMG that matches the path in the array', function () {
-        var elm = compileDirective(defaultTemplate, scope);
-        var imgClass;
+          var elm = compileDirective(defaultTemplate, scope);
+          var imgClass;
 
-        angular.forEach(scope.mockImages, function(url, index){
+          angular.forEach(scope.mockImages, function(url, index){
             imgClass = elm.find('ul li img').eq(index);
             expect(imgClass.attr('class')).to.equal('img-responsive');
-        });
+          });
 
       });
 
