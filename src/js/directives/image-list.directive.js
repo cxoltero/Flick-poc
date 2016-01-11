@@ -46,13 +46,13 @@
 
       function _generateListItems(){
 
-        angular.forEach(controller.images, function (value) {
+        angular.forEach(controller.images, function (url) {
 
-          if (!angular.isString(value)) {
+          if (!angular.isString(url)) {
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + value + '" ><img class="img-responsive" src="' + value + '"/></a></li>');
+            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" ><img class="img-responsive" src="' + url + '"/></a></li>');
           }
         });
       }

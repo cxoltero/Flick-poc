@@ -26,13 +26,13 @@
                 var farm, server, id, title, secret, picUrl;
                 var images = [];
 
-                angular.forEach(data.photos.photo, function (value) {
+                angular.forEach(data.photos.photo, function (photo) {
 
-                    farm = value.farm;
-                    server = value.server;
-                    id = value.id;
-                    title = value.title;
-                    secret = value.secret;
+                    farm = photo.farm;
+                    server = photo.server;
+                    id = photo.id;
+                    title = photo.title;
+                    secret = photo.secret;
                     picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
 
                     images.push(picUrl);
