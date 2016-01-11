@@ -45,15 +45,16 @@
       });
 
       function _generateListItems(){
-        for (var i = 0; i < controller.images.length; i++) {
 
-          if (!angular.isString(controller.images[i])) {
+        angular.forEach(controller.images, function (value) {
+
+          if (!angular.isString(value)) {
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + controller.images[i] + '" ><img class="img-responsive" src="' + controller.images[i] + '"/></a></li>');
+            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + value + '" ><img class="img-responsive" src="' + value + '"/></a></li>');
           }
-        }
+        });
       }
 
     }

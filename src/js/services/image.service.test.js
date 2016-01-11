@@ -103,18 +103,22 @@ describe('getImagesService', function(){
                 var createImagesArray = function (data) {
                     var farm, server, id, title, secret, picUrl, currentPhoto;
                     var images = [];
+                    var counter = 0;
 
-                    for (var i = 0; i < data.photos.photo.length; i++) {
-                        currentPhoto = data.photos.photo[i];
-                        farm = currentPhoto.farm;
-                        server = currentPhoto.server;
-                        id = currentPhoto.id;
-                        title = currentPhoto.title;
-                        secret = currentPhoto.secret;
+                   angular.forEach(data.photos.photo, function (value) {
+
+                        farm = value.farm;
+                        server = value.server;
+                        id = value.id;
+                        title = value.title;
+                        secret = value.secret;
                         picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
+
                         images.push(picUrl);
-                        expect(images[i]).to.equal("https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
-                    }
+                        expect(images[counter]).to.equal("https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg");
+
+                       counter++;
+                    });
                 };
 
                 createImagesArray(sampleJSON);
