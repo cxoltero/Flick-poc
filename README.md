@@ -61,3 +61,12 @@ it('should pass', function(){
  - Directive for the slide show and slides
 
 **Note:** It's considered best practice to build the app in pieces/components. Meaning that, ideally, we create a service to retrieve the data. Then, create a controller that uses that service to access the data. Finally, a directive is created, which excepts the data now present in the controller, and outputs the appropriate HTML. Each of these pieces should be tested and reviewed before the next is built.
+
+## Phase 6
+This phase will introduce the concept of build automation, by using Gulp to add JS / CSS linting.
+1. Add [pipeline-validate-js][] and a introduce a `gulp js:lint` task to lint all JS in `src/`
+2. Add [pipeline-validate-css][] and a introduce a `gulp css:lint` task to lint all CSS in `src/`
+3. Add a third task that runs both tasks, called `gulp build`
+
+[pipeline-validate-js]: https://www.npmjs.com/package/pipeline-validate-js
+[pipeline-validate-css]: https://www.npmjs.com/package/pipeline-validate-css
