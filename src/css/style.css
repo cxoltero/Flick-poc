@@ -3,7 +3,7 @@ body, html {
     padding: 0;
 }
 
-#images img{
+.singleImg{
     margin-top: 15px;
 }
 .col-float-fix{

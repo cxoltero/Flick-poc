@@ -52,7 +52,8 @@
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" ><img class="img-responsive" src="' + url + '"/></a></li>');
+            var imageTag = '<img class="img-responsive singleImg" src="' + url + '"/>';
+            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" >' + imageTag + '</a></li>');
           }
         });
       }
