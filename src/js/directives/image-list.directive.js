@@ -3,8 +3,8 @@
 (function (angular) {
 
   angular
-      .module('flickrPOC')
-      .directive('imagesList', imagesList);
+    .module('flickrPOC')
+    .directive('imagesList', imagesList);
 
   imagesList.$inject = ['$log'];
 
@@ -34,17 +34,17 @@
 
       }
 
-      scope.$watch(function(){
+      scope.$watch(function() {
         return controller.images;
-      }, function(newVal, oldVal){
+      }, function(newVal, oldVal) {
 
-        if(newVal !== oldVal){
+        if (newVal !== oldVal) {
           _generateListItems();
         }
 
       });
 
-      function _generateListItems(){
+      function _generateListItems() {
 
         angular.forEach(controller.images, function (url) {
 
