@@ -10,7 +10,6 @@
     function imagesCtrl(images, $log) {
         var vm = this;// jshint ignore:line
         vm.images = [];
-        vm.name = 'FlickrPOC';
 
         function activate(){
             images.loadPics()
