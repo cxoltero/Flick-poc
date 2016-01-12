@@ -66,7 +66,7 @@ it('should pass', function(){
 This phase will introduce the concept of build automation, by using Gulp to add JS / CSS linting.
 1. Add [pipeline-validate-js][] and a introduce a `gulp js:lint` task to lint all JS in `src/`
 2. Add [pipeline-validate-css][] and a introduce a `gulp css:lint` task to lint all CSS in `src/`
-3. Add a third task that runs boths task, called `gulp build`
+3. Add a third task that runs both tasks, called `gulp build`
 
 [pipeline-validate-js]: https://www.npmjs.com/package/pipeline-validate-js
 [pipeline-validate-css]: https://www.npmjs.com/package/pipeline-validate-css
