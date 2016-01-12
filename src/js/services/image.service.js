@@ -23,21 +23,20 @@
             }
 
             function createImagesArray(data){
-                var farm, server, id, title, secret, picUrl, currentPhoto;
+                var farm, server, id, title, secret, picUrl;
                 var images = [];
 
-                for(var i = 0; i < data.photos.photo.length; i++) {
-                    currentPhoto = data.photos.photo[i];
+                angular.forEach(data.photos.photo, function (photo) {
 
-                    farm = currentPhoto.farm;
-                    server = currentPhoto.server;
-                    id = currentPhoto.id;
-                    title = currentPhoto.title;
-                    secret = currentPhoto.secret;
+                    farm = photo.farm;
+                    server = photo.server;
+                    id = photo.id;
+                    title = photo.title;
+                    secret = photo.secret;
                     picUrl = "https://farm" + farm + ".staticflickr.com/" + server + "/" + id + "_" + secret + "_z.jpg";
 
                     images.push(picUrl);
-                }
+                });
 
                 return images;
             }

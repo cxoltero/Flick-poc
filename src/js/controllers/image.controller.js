@@ -9,6 +9,7 @@
 
     function imagesCtrl(images, $log) {
         var vm = this;// jshint ignore:line
+        vm.images = [];
 
         function activate(){
             images.loadPics()

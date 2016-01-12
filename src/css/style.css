@@ -2,10 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
 }
-.lb-container{
-    padding: 15px;
-    background-color: rgba(255, 255, 255, .2);
-}
+
 #images img{
     margin-top: 15px;
 }

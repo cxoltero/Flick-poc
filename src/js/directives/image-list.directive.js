@@ -6,13 +6,13 @@
       .module('flickrPOC')
       .directive('imagesList', imagesList);
 
-  imagesList.$inject = ['$log', '$compile'];
+  imagesList.$inject = ['$log'];
 
-  function imagesList($log, $compile) {
+  function imagesList($log) {
     return {
       scope: {},
       restrict: 'EA',
-      template: '<ul></ul>',
+      template: '<ul class="list-unstyled"></ul>',
       controller: ImagesListController,
       controllerAs: 'ImagesList',
       link: linkFunction,
@@ -30,17 +30,31 @@
         $log.error('Images List Failed! Please provide an array.');
 
       } else {
+        _generateListItems();
 
-        for (var i = 0; i < controller.images.length; i++) {
+      }
 
-          if (!angular.isString(controller.images[i])) {
+      scope.$watch(function(){
+        return controller.images;
+      }, function(newVal, oldVal){
+
+        if(newVal !== oldVal){
+          _generateListItems();
+        }
+
+      });
+
+      function _generateListItems(){
+
+        angular.forEach(controller.images, function (url) {
+
+          if (!angular.isString(url)) {
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li><a data-lightbox="image-set" href="' + controller.images[i] + '" ><img class="img-responsive" src="' + controller.images[i] + '"/></a></li>');
+            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" ><img class="img-responsive" src="' + url + '"/></a></li>');
           }
-        }
-
+        });
       }
 
     }
@@ -49,23 +63,7 @@
   ImagesListController.$inject = [];
 
   function ImagesListController() {
+
   }
 
 })(angular);
-
-/*
- Accept an array of images === <div images-list image="{{ARRAY}}"></div>
- If no array, throw error asking for array.
- Output a list of images, with lightbox attributes/classes
- Each image, when clicked, opens in lightbox
-
-
- */
-
-/*
- View Controller
- Retrieve the images via Service
- Store images array in VM property
- VM property passed to directive. <-- ARRAY
-
- */
