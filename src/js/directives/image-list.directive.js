@@ -52,8 +52,9 @@
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            var imageTag = '<img class="img-responsive singleImg" src="' + url + '"/>';
+            var imageTag = '<img class="img-responsive single-img" src="' + url + '"/>';
             iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" >' + imageTag + '</a></li>');
+
           }
         });
       }

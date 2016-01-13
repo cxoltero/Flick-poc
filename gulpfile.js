@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 var validatePipeline = require('pipeline-validate-js')();
 var validateCssPipeline = require('pipeline-validate-css')();
