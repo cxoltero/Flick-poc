@@ -4,5 +4,4 @@
   "predef": [
     "sinon", "expect", "describe", "angular", "it",
     "module", "beforeEach", "inject"]
-
 }
