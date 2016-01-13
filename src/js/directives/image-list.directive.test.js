@@ -123,7 +123,7 @@ describe('Image List Directive', function () {
 
           angular.forEach(scope.mockImages, function(url, index){
             imgClass = elm.find('ul li img').eq(index);
-            expect(imgClass.attr('class')).to.equal('img-responsive singleImg');
+            expect(imgClass.attr('class')).to.equal('img-responsive single-img');
           });
 
       });
