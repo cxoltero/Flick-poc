@@ -1,6 +1,5 @@
-'use strict';
-
 (function (angular) {
+    'use strict';
     angular
         .module('flickrPOC')
         .controller('imagesCtrl', imagesCtrl);
