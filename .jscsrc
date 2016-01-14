@@ -1,4 +1,16 @@
 {
   "maximumLineLength": 250,
-  "disallowDanglingUnderscores": { "allExcept": ["_$http_", "_formUrl", "_generateListItems", "_$compile_", "_$rootScope_", "_$controller_", "_images_", "_$q_", "_$log_"] }
+  "disallowDanglingUnderscores": { 
+  	"allExcept": [
+  		"_$http_", 
+  		"_formUrl", 
+  		"_generateListItems", 
+  		"_$compile_", 
+  		"_$rootScope_", 
+  		"_$controller_", 
+  		"_images_", 
+  		"_$q_", 
+  		"_$log_"
+  	] 
+  }
 }

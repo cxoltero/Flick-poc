@@ -2,6 +2,14 @@
   "maxlen": 250,
   "globalstrict": true,
   "predef": [
-    "sinon", "expect", "describe", "angular", "it",
-    "module", "beforeEach", "inject", "require"]
+    "sinon", 
+    "expect", 
+    "describe", 
+    "angular", 
+    "it",
+    "module", 
+    "beforeEach", 
+    "inject", 
+    "require"
+  ]
 }
