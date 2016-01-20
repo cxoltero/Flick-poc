@@ -1,0 +1,15 @@
+{
+  "maxlen": 250,
+  "globalstrict": true,
+  "browser": true,
+  "jquery": true,
+  "mocha": true,
+  "qunit": true,  
+  "undef":true,
+  "eqeqeq": true,
+  "globals": {
+    "sinon": true, 
+    "angular": true, 
+    "inject": true
+  }
+}

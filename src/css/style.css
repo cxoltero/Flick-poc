@@ -6,6 +6,7 @@ body, html {
 .single-img{
     margin-top: 15px;
 }
+
 .col-float-fix{
     float: none;
     display: inline-block;

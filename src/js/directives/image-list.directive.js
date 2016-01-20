@@ -3,8 +3,8 @@
 (function (angular) {
 
   angular
-      .module('flickrPOC')
-      .directive('imagesList', imagesList);
+    .module('flickrPOC')
+    .directive('imagesList', imagesList);
 
   imagesList.$inject = ['$log'];
 
@@ -34,17 +34,17 @@
 
       }
 
-      scope.$watch(function(){
+      scope.$watch(function() {
         return controller.images;
-      }, function(newVal, oldVal){
+      }, function(newVal, oldVal) {
 
-        if(newVal !== oldVal){
+        if (newVal !== oldVal) {
           _generateListItems();
         }
 
       });
 
-      function _generateListItems(){
+      function _generateListItems() {
 
         angular.forEach(controller.images, function (url) {
 
@@ -52,7 +52,9 @@
             $log.error('Images List Failed! Invalid image URL.');
             return;
           } else {
-            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" ><img class="img-responsive single-img" src="' + url + '"/></a></li>');
+            var imageTag = '<img class="img-responsive single-img" src="' + url + '"/>';
+            iElem.find('ul').append('<li class="col-float-fix col-xs-6 col-md-3 col-lg-1"><a data-lightbox="image-set" href="' + url + '" >' + imageTag + '</a></li>');
+
           }
         });
       }
