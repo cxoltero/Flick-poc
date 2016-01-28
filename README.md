@@ -70,3 +70,12 @@ This phase will introduce the concept of build automation, by using Gulp to add 
 
 [pipeline-validate-js]: https://www.npmjs.com/package/pipeline-validate-js
 [pipeline-validate-css]: https://www.npmjs.com/package/pipeline-validate-css
+
+## Phase 7
+Create an application package build ready a production deployment. The idea of a deployment build in web applications is to prepare the application code in a way that provides the ulitmate experience for the user, while keeping the stress on the hardware, both front- and back-end, to a minimum. 
+
+For this build to be successful, we need a gulp task that creates a stand-alone, launchable application, located within a `/dest` directory (which *is not* commited to the repo). The files in this directory should be: 
+- Linted
+- Concatenated (2 files: 1 for bower components, 1 for application code)
+- Minified (file names: `vendor.min.js`, `app.min.js`)
+- Included in index.html
