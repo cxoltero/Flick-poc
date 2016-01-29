@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
 var htmlreplace = require('gulp-html-replace');
+var build1 = require('./pipelines/build');
 
 //check for css and js errors
 gulp.task('js:lint', function() {
@@ -51,7 +52,7 @@ gulp.task('replaceHTML', function() {
       'css': './css/styles.css',
       'js': ['js/vendor.min.js', 'js/app.min.js']
     }))
-    .pipe(gulp.dest('dest/'));
+    .pipe(gulp.dest('dest/'))
 });
 
 //concatenate stylesheets
@@ -59,13 +60,12 @@ gulp.task('css:concat', function() {
   var filter = mainBowerFiles('**/*.css');
   filter.push('./src/**/*.css');
   return gulp
-    .src(['./bower_components/**/*.css'])
+    .src(filter)
     .pipe(concatcss('css/styles.css'))
     .pipe(gulp.dest('./dest/'));
 });
 
 //Template functions
-//gulp.task('lint', ['js:lint', 'css:lint']);
 gulp.task('js:uglify', ['js:concatApp', 'js:concat:bower'], function(){
   return gulp.src('./dest/js/**/*.js')
     .pipe(uglify().on('error', function(e) {
