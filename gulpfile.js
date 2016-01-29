@@ -8,7 +8,6 @@ var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
 var htmlreplace = require('gulp-html-replace');
-var build1 = require('./pipelines/build');
 
 //check for css and js errors
 gulp.task('js:lint', function() {
