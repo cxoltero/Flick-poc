@@ -38,7 +38,7 @@ gulp.task('js:concatApp', function() {
 });
 
 //collect required assets
-gulp.task('getAssets', function () {
+gulp.task('getImages', function () {
   var assets = mainBowerFiles(['**/*.png', '**/*.gif']);
 
   return gulp
@@ -65,7 +65,7 @@ gulp.task('css:concat', function() {
 });
 
 //Template functions
-gulp.task('lint', ['js:lint', 'css:lint']);
+//gulp.task('lint', ['js:lint', 'css:lint']);
 gulp.task('js:uglify', ['js:concatApp', 'js:concatBower'], function(){
   return gulp.src('./dest/js/**/*.js')
     .pipe(uglify().on('error', function(e) {
@@ -79,5 +79,10 @@ gulp.task('css:minify', ['css:concat'] , function() {
     .pipe(gulp.dest('./dest/css'));
 });
 
+
+gulp.task('applyCSS', ['css:lint', 'css:minify']);
+gulp.task('applyJS', ['js:lint', 'js:uglify']);
+gulp.task('getAssets', ['getImages', 'replaceHTML']);
+
 //Apply functions
-gulp.task('default', ['lint', 'js:uglify', 'css:minify', 'getAssets', 'replaceHTML']);
+gulp.task('default', ['applyJS', 'applyCSS', 'getAssets']);
