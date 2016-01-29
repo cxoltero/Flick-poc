@@ -7,6 +7,7 @@ var concatcss = require('gulp-concat-css');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
+var htmlreplace = require('gulp-html-replace');
 
 //check for css and js errors
 gulp.task('js:lint', function() {
@@ -37,12 +38,20 @@ gulp.task('js:concatApp', function() {
 });
 
 //collect required assets
-gulp.task('getAssets', function (dev) {
-  var filter = mainBowerFiles(['**/*.png', '**/*.gif']);
+gulp.task('getAssets', function () {
+  var assets = mainBowerFiles(['**/*.png', '**/*.gif']);
 
   return gulp
-    .src(filter)
+    .src(assets)
     .pipe(gulp.dest('./dest/lightbox2/src/images/'));
+});
+gulp.task('replaceHTML', function() {
+  return gulp.src('./src/index.html')
+    .pipe(htmlreplace({
+      'css': './css/styles.css',
+      'js': ['js/vendor.min.js', 'js/app.min.js']
+    }))
+    .pipe(gulp.dest('dest/'));
 });
 
 //concatenate stylesheets
@@ -71,4 +80,4 @@ gulp.task('css:minify', ['css:concat'] , function() {
 });
 
 //Apply functions
-gulp.task('default', ['lint', 'js:uglify', 'css:minify', 'getAssets']);
+gulp.task('default', ['lint', 'js:uglify', 'css:minify', 'getAssets', 'replaceHTML']);
