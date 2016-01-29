@@ -22,7 +22,7 @@ gulp.task('css:lint', function() {
 });
 
 //concatenate files for venders and app
-gulp.task('js:concatBower', function () {
+gulp.task('js:concat:bower', function () {
   var filter = mainBowerFiles('**/*.js');
 
   return gulp
@@ -66,7 +66,7 @@ gulp.task('css:concat', function() {
 
 //Template functions
 //gulp.task('lint', ['js:lint', 'css:lint']);
-gulp.task('js:uglify', ['js:concatApp', 'js:concatBower'], function(){
+gulp.task('js:uglify', ['js:concatApp', 'js:concat:bower'], function(){
   return gulp.src('./dest/js/**/*.js')
     .pipe(uglify().on('error', function(e) {
       console.log(e);
@@ -82,7 +82,7 @@ gulp.task('css:minify', ['css:concat'] , function() {
 
 gulp.task('applyCSS', ['css:lint', 'css:minify']);
 gulp.task('applyJS', ['js:lint', 'js:uglify']);
-gulp.task('getAssets', ['getImages', 'replaceHTML']);
+gulp.task('copy:assets', ['getImages', 'replaceHTML']);
 
 //Apply functions
-gulp.task('default', ['applyJS', 'applyCSS', 'getAssets']);
+gulp.task('default', ['applyJS', 'applyCSS', 'copy:assets']);
