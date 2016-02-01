@@ -15,7 +15,7 @@ gulp.task('replaceHTML', function() {
   return gulp.src('./src/index.html')
     .pipe(htmlreplace({
       'css': './css/styles.css',
-      'js': ['js/vendor.min.js', 'js/app.min.js']
+      'js': ['./js/vendor.min.js', './js/app.min.js']
     }))
     .pipe(gulp.dest('dest/'));
 });

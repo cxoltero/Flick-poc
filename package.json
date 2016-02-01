@@ -43,7 +43,7 @@
     "phantomjs": "1.9.19",
     "pipeline-validate-css": "0.3.0",
     "pipeline-validate-js": "0.3.2",
-    "require-dir": "^0.3.0",
+    "require-dir": "0.3.0",
     "sinon": "1.17.2"
   }
 }
