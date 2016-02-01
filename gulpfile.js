@@ -43,7 +43,7 @@ gulp.task('getImages', function () {
 
   return gulp
     .src(assets)
-    .pipe(gulp.dest('./dest/lightbox2/src/images/'));
+    .pipe(gulp.dest('./dest/lightbox2/dist/images/'));
 });
 gulp.task('replaceHTML', function() {
   return gulp.src('./src/index.html')
