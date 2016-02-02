@@ -6,7 +6,6 @@ var htmlreplace = require('gulp-html-replace');
 //collect required assets
 gulp.task('getImages', function () {
   var assets = mainBowerFiles(['**/*.png', '**/*.gif']);
-  console.log(assets);
   return gulp
     .src(assets)
     .pipe(gulp.dest('./dest/lightbox2/dist/images'));
