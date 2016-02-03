@@ -4,14 +4,15 @@ var validatePipeline = require('pipeline-validate-js')();
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var mainBowerFiles = require('main-bower-files');
+var clear = require('./clear.js');
 
-gulp.task('js:lint', function() {
+gulp.task('js:lint',['clean:dest'], function() {
   return gulp
     .src('./src/js/**/*.js')
     .pipe(validatePipeline.validateJS());
 });
 
-gulp.task('js:concat:bower', function () {
+gulp.task('js:concat:bower',['clean:dest'], function () {
   var filter = mainBowerFiles('**/*.js');
 
   return gulp
@@ -20,7 +21,7 @@ gulp.task('js:concat:bower', function () {
     .pipe(gulp.dest('./dest/js/'));
 });
 
-gulp.task('js:concatApp', function() {
+gulp.task('js:concatApp',['clean:dest'], function() {
   return gulp
     .src(['!./src/js/**/*.test.js', './src/js/**/*.js'])
     .pipe(concat('app.min.js'))
