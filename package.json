@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "karma start",
-    "server": "http-server -o"
+    "start": "http-server -o"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,13 @@
   "devDependencies": {
     "chai": "2.3.0",
     "dirty-chai": "1.2.2",
+    "fs": "0.0.2",
+    "gulp-concat": "2.6.0",
+    "gulp-concat-css": "2.2.0",
+    "gulp-cssnano": "2.1.0",
+    "gulp-html-replace": "1.5.5",
+    "gulp-minify": "0.0.5",
+    "gulp-uglify": "1.5.1",
     "karma": "0.13.16",
     "karma-browserify": "4.4.2",
     "karma-chai": "0.1.0",
@@ -32,10 +39,12 @@
     "karma-safari-launcher": "0.1.1",
     "karma-sinon": "1.0.4",
     "karma-sinon-chai": "1.1.0",
+    "main-bower-files": "2.11.1",
     "mocha": "2.3.4",
     "phantomjs": "1.9.19",
     "pipeline-validate-css": "0.3.0",
     "pipeline-validate-js": "0.3.2",
+    "rmdir": "^1.2.0",
     "sinon": "1.17.2"
   }
 }

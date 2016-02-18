@@ -4,6 +4,8 @@
     .module('flickrPOC')
     .service('images', images);
 
+  images.$inject = ['$http'];
+
   function images($http) {
     return {
       loadPics: loadPics,
