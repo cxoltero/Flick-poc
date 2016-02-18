@@ -15,7 +15,6 @@
       images.loadPics()
         .then(function (res) {
           vm.images = images.createImagesArray(res.data);
-
         })
         .catch(function(err) {
           $log.error(err.message, err.stat, err.code);

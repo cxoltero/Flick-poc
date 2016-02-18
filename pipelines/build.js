@@ -10,7 +10,7 @@ gulp.task('getImages', function () {
     .src(assets)
     .pipe(gulp.dest('./dest/lightbox2/dist/images'));
 });
-gulp.task('replaceHTML', function() {
+gulp.task('replaceHTML',['getImages'], function() {
   return gulp.src('./src/index.html')
     .pipe(htmlreplace({
       'css': './css/styles.css',
@@ -19,4 +19,4 @@ gulp.task('replaceHTML', function() {
     .pipe(gulp.dest('dest/'));
 });
 
-gulp.task('copy:assets', ['replaceHTML', 'getImages']);
+gulp.task('copy:assets', ['replaceHTML']);

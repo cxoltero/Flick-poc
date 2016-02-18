@@ -4,15 +4,14 @@ var validateCssPipeline = require('pipeline-validate-css')();
 var concatcss = require('gulp-concat-css');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
-var clear = require('./clear.js');
 
-gulp.task('css:lint',['clean:dest'], function() {
+gulp.task('css:lint', function() {
   return gulp
     .src('./src/css/**/*.css')
     .pipe(validateCssPipeline.validateCSS());
 });
 
-gulp.task('css:concat',['clean:dest'], function() {
+gulp.task('css:concat', function() {
   var filter = mainBowerFiles('**/*.css');
   filter.push('./src/**/*.css');
   return gulp

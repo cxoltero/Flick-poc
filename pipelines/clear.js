@@ -4,13 +4,15 @@ var del = require('del');
 var pathType = require('path-type');
 
 gulp.task('clean:dest', function () {
-  var checkDest = pathType.dir('./dest').then(function(isDir){
-    return isDir;
-  });
-  console.log("checking for file");
-  if(checkDest){
-    del(['./dest']);
-  }else{
-    return;
+
+  try{
+    var checkdest = pathType.dirSync('./dest');
+
+    if(checkdest){
+      del(['./dest']);
+      console.log("Directory deleted");
+    }
+  }catch(err){
+    console.log(err);
   }
 });
