@@ -20,6 +20,7 @@
   "devDependencies": {
     "chai": "2.3.0",
     "dirty-chai": "1.2.2",
+    "fs": "0.0.2",
     "gulp-concat": "2.6.0",
     "gulp-concat-css": "2.2.0",
     "gulp-cssnano": "2.1.0",
@@ -43,6 +44,7 @@
     "phantomjs": "1.9.19",
     "pipeline-validate-css": "0.3.0",
     "pipeline-validate-js": "0.3.2",
+    "rmdir": "^1.2.0",
     "sinon": "1.17.2"
   }
 }

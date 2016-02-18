@@ -8,6 +8,19 @@ var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var mainBowerFiles = require('main-bower-files');
 var htmlreplace = require('gulp-html-replace');
+var rmdir = require('rmdir');
+var fs = require('fs');
+
+//check if dest folder exists and if so, delete it
+gulp.task('cleanDest', function(){
+  fs.exists("./dest", function(res){
+    if(res){
+      rmdir('./dest', function(err, dirs, files){
+        console.log("Dest file has been deleted");
+      });
+    }
+  });
+});
 
 //check for css and js errors
 gulp.task('js:lint', function() {
@@ -83,5 +96,6 @@ gulp.task('applyCSS', ['css:lint', 'css:minify']);
 gulp.task('applyJS', ['js:lint', 'js:uglify']);
 gulp.task('copy:assets', ['getImages', 'replaceHTML']);
 
+gulp.task('build', ['applyJS', 'applyCSS', 'copy:assets']);
 //Apply functions
-gulp.task('default', ['applyJS', 'applyCSS', 'copy:assets']);
+gulp.task('default', ['build']);
