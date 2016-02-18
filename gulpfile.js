@@ -10,6 +10,7 @@ var mainBowerFiles = require('main-bower-files');
 var htmlreplace = require('gulp-html-replace');
 var rmdir = require('rmdir');
 var fs = require('fs');
+var runSequence = require('run-sequence').use(gulp);
 
 //check if dest folder exists and if so, delete it
 gulp.task('cleanDest', function(){
@@ -96,6 +97,8 @@ gulp.task('applyCSS', ['css:lint', 'css:minify']);
 gulp.task('applyJS', ['js:lint', 'js:uglify']);
 gulp.task('copy:assets', ['getImages', 'replaceHTML']);
 
-gulp.task('build', ['applyJS', 'applyCSS', 'copy:assets']);
+gulp.task('build', function(){
+  runSequence('cleanDest', 'applyJS', 'applyCSS', 'copy:assets')
+});
 //Apply functions
 gulp.task('default', ['build']);
