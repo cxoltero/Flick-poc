@@ -21,6 +21,7 @@
     "chai": "2.3.0",
     "del": "^2.2.0",
     "dirty-chai": "1.2.2",
+    "fs": "0.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "2.6.0",
     "gulp-concat-css": "2.2.0",
@@ -46,6 +47,8 @@
     "pipeline-validate-css": "0.3.0",
     "pipeline-validate-js": "0.3.2",
     "require-dir": "0.3.0",
+    "rmdir": "^1.2.0",
+    "run-sequence": "^1.1.5",
     "sinon": "1.17.2"
   },
   "dependencies": {
